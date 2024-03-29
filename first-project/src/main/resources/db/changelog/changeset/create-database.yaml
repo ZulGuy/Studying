@@ -1,7 +1,74 @@
 databaseChangeLog:
-  -changeSet:
-    id: create-database
-    author: Volodymyr
-    changes:
-      -createTable:
-        tableName: 
+  - changeSet:
+      id: create-database
+      author: Volodymyr
+      changes:
+        - createTable:
+            tableName: Authors
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: Playlists
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: Songs
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: duration
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: genre
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: author_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_author_id
+                    references: Authors(id)
+              - column:
+                  name: playlist_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_playlist_id
+                    references: Playlists(id)
