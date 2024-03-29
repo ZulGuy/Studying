@@ -1,0 +1,7 @@
+databaseChangeLog:
+  -changeSet:
+    id: create-database
+    author: Volodymyr
+    changes:
+      -createTable:
+        tableName: 
