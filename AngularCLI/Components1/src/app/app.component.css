@@ -1,0 +1,7 @@
+h2, h3{
+    color:red;}
+p{font-size:13px; color:red;}
+:host {
+    font-family: Verdana;
+    color: #555;
+}
