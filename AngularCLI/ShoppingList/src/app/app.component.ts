@@ -71,12 +71,18 @@ export class AppComponent {
             {purchase: "Сир", done: false, price: 310}
         ];
 
+    temp_items = this.items;
+
     showPurchased = false;
     filteredItems: ({ price: number; purchase: string; done: boolean })[] = this.items
     filterItems() {
-        this.items = this.showPurchased
-            ? this.items.filter(item => item.done)
-            : this.items.filter(item => !item.done);
+        if(this.items == this.temp_items) {
+            this.items = this.showPurchased
+                ? this.items.filter(item => item.done)
+                : this.items.filter(item => !item.done);
+        }else {
+            this.items = this.temp_items;
+        }
     }
 
     addItem(text: string, price: number): void {
