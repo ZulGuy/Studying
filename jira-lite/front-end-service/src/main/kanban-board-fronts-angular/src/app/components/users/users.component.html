@@ -1,0 +1,58 @@
+<div *ngIf="canManageUsers()" class="container mt-4 users-page">
+  <h2 class="mb-3">Користувачі</h2>
+
+  <div class="row g-3 mb-3 filter-bar">
+    <div class="col-md-6">
+      <input type="text" class="form-control search-input"
+             [(ngModel)]="searchTerm"
+             (input)="filterUsers()"
+             placeholder="Пошук за ім'ям">
+    </div>
+    <div class="col-md-3">
+      <select class="form-select users-per-page-select"
+              [(ngModel)]="usersPerPage"
+              (change)="filterUsers()">
+        <option [value]="5">5</option>
+        <option [value]="10">10</option>
+        <option [value]="20">20</option>
+      </select>
+    </div>
+  </div>
+
+  <table class="table table-hover table-bordered user-table">
+    <thead class="table-light">
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of paginatedUsers">
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        {{ user.role === "ROLE_USER" ? 'Користувач' : 'Адміністратор' }}
+      </td>
+      <td>
+          <span class="badge" [ngClass]="user.active ? 'bg-success' : 'bg-danger'">
+            {{ user.active ? 'Активний' : 'Неактивний' }}
+          </span>
+      </td>
+      <td>
+        <button class="btn btn-sm btn-outline-primary" (click)="goToUser(user.id)">Переглянути</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteUser(user.id)">🗑️</button>
+        <button class="btn btn-sm btn-outline-primary" (click)="resendInvitation(user.email)">Надіслати повторно</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination-controls d-flex justify-content-between align-items-center mt-3">
+    <button class="btn btn-outline-secondary" (click)="prevPage()" [disabled]="currentPage === 1">← Назад</button>
+    <span>Сторінка {{ currentPage }} з {{ totalPages }}</span>
+    <button class="btn btn-outline-secondary" (click)="nextPage()" [disabled]="currentPage === totalPages">Вперед →</button>
+  </div>
+</div>
