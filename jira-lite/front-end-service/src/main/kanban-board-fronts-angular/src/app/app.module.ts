@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ChartsModule } from 'ng2-charts';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {DragDropModule} from '@angular/cdk/drag-drop';
@@ -44,7 +44,6 @@ import { InviteUserComponent } from './components/invite-user/invite-user.compon
     CommentsComponent,
     LogoutComponent,
     RegisterComponent,
-    TopbarComponent,
     AllTasksComponent,
     RegisterInviteComponent,
     InviteUserComponent
@@ -55,7 +54,8 @@ import { InviteUserComponent } from './components/invite-user/invite-user.compon
     DragDropModule,
     SharedModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TenantInterceptor, multi: true }
