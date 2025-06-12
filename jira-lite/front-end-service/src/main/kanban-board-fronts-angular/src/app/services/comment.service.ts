@@ -27,9 +27,14 @@ export class CommentService {
     return this.http.get<CommentDTO[]>(`${this.api}/tasks/${taskId}`, { withCredentials: true });
   }
 
-  addCommentToTask(taskId: number, content: string): Observable<void> {
-    return this.http.post<void>(`${this.api}/tasks/${taskId}`, { content }, { withCredentials: true });
+  addCommentToTask(taskId: number, description: string): Observable<void> {
+    return this.http.post<void>(
+      `${this.api}/tasks/${taskId}`,
+      { description }, // Ось тут! не content, а description
+      { withCredentials: true }
+    );
   }
+
 
   deleteComment(taskId: number, id: number): Observable<void> {
     return this.http.delete<void>(`${this.api}/task/${taskId}/${id}`, { withCredentials: true });

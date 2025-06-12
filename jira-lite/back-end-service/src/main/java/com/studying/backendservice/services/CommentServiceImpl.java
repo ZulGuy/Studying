@@ -13,15 +13,18 @@ public class CommentServiceImpl implements CommentService {
 
   private final CommentRepository commentRepository;
   private final TaskRepository taskRepository;
+  private final EmailService emailService;
 
   @Autowired
-  public CommentServiceImpl(CommentRepository commentRepository, TaskRepository taskRepository) {
+  public CommentServiceImpl(CommentRepository commentRepository, TaskRepository taskRepository, EmailService emailService) {
     this.commentRepository = commentRepository;
     this.taskRepository = taskRepository;
+    this.emailService = emailService;
   }
 
   @Override
   public Comment addComment(Comment comment) {
+    emailService.sendNewCommentNotification(comment.getTask(), comment);
     return commentRepository.save(comment);
   }
 

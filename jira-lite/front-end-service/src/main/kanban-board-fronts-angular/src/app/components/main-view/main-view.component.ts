@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TaskDTO, TaskStatus } from '../../types/api.types';
 import {Column} from "../../models/column.model";
 import {TaskService} from "../../services/task.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-main-view',
@@ -28,7 +29,8 @@ export class MainViewComponent implements OnInit {
     private projectService: ProjectService,
     private route: ActivatedRoute,
     private router: Router,
-    private taskService: TaskService
+    private taskService: TaskService,
+    private authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -119,7 +121,7 @@ export class MainViewComponent implements OnInit {
       description: description || '',
       status: 'TODO' as TaskStatus,
       assigneeId: null,
-      initiatorId: null,
+      initiatorId: this.authService.getCurrentUser().id,
       projectId: this.projectId
     };
 

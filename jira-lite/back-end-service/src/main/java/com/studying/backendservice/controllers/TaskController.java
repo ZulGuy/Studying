@@ -4,15 +4,18 @@ import com.studying.backendservice.dto.CommentDTO;
 import com.studying.backendservice.dto.TaskDTO;
 import com.studying.backendservice.models.Project;
 import com.studying.backendservice.models.Task;
+import com.studying.backendservice.models.User;
 import com.studying.backendservice.repositories.ProjectRepository;
 import com.studying.backendservice.repositories.TaskRepository;
 import com.studying.backendservice.repositories.UserRepository;
+import com.studying.backendservice.services.EmailService;
 import com.studying.backendservice.services.TaskService;
 import com.studying.backendservice.utils.Status;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,17 +33,20 @@ public class TaskController {
   private final UserRepository userRepository;
   private final TaskRepository taskRepository;
   private final ProjectRepository projectRepository;
+  private final EmailService emailService;
 
   @Autowired
-  public TaskController(TaskService taskService, UserRepository userRepository, TaskRepository taskRepository, ProjectRepository projectRepository) {
+  public TaskController(TaskService taskService, UserRepository userRepository, TaskRepository taskRepository,
+      ProjectRepository projectRepository, EmailService emailService) {
     this.taskService = taskService;
     this.userRepository = userRepository;
     this.taskRepository = taskRepository;
     this.projectRepository = projectRepository;
+    this.emailService = emailService;
   }
 
   @PostMapping
-  public ResponseEntity<Task> createTask(@RequestBody TaskDTO dto) {
+  public ResponseEntity<Task> createTask(@RequestBody TaskDTO dto,  @AuthenticationPrincipal User userDetails) {
     Task task = new Task();
     task.setSummary(dto.getSummary());
     task.setDescription(dto.getDescription());
@@ -64,7 +70,10 @@ public class TaskController {
 
       task.setProject(project);
 
-    return ResponseEntity.ok(taskService.createTask(task));
+    Task createdTask = taskService.createTask(task);
+    emailService.sendTaskCreatedNotification(createdTask);
+
+    return ResponseEntity.ok(createdTask);
   }
 
   @GetMapping("/{id}")
