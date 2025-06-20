@@ -25,6 +25,9 @@ export class MainViewComponent implements OnInit {
 
   projectId!: number;
 
+  showCreateTaskModal = false;
+  currentUserId: number;
+
   constructor(
     private projectService: ProjectService,
     private route: ActivatedRoute,
@@ -42,6 +45,7 @@ export class MainViewComponent implements OnInit {
         this.loadTasks();
       }
     });
+    this.currentUserId = this.authService.getCurrentUser().id;
   }
 
 
@@ -113,18 +117,7 @@ export class MainViewComponent implements OnInit {
   }
 
 
-  openCreateTaskModal() {
-    const summary = prompt('Заголовок задачі');
-    const description = prompt('Опис задачі');
-    const task = {
-      summary: summary || '',
-      description: description || '',
-      status: 'TODO' as TaskStatus,
-      assigneeId: null,
-      initiatorId: this.authService.getCurrentUser().id,
-      projectId: this.projectId
-    };
-
+  handleTaskCreated(task: any) {
     this.taskService.createTask(task).subscribe(() => this.loadTasks());
   }
 

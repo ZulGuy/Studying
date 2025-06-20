@@ -1,9 +1,13 @@
 package com.studying.backendservice.services;
 
 import com.studying.backendservice.dto.UserDTO;
+import com.studying.backendservice.models.PasswordResetToken;
 import com.studying.backendservice.models.User;
+import com.studying.backendservice.repositories.PasswordResetTokenRepository;
 import com.studying.backendservice.repositories.UserRepository;
 import com.studying.backendservice.utils.Role;
+import java.time.LocalDateTime;
+import java.util.UUID;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
@@ -19,12 +23,18 @@ public class UserServiceImpl implements UserService {
 
   private final UserRepository userRepository;
   private PasswordEncoder passwordEncoder;
+  private final PasswordResetTokenRepository tokenRepository;
+  private final PasswordEncoder encoder;
+  private final EmailService emailService;
 
 
   @Autowired
-  public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+  public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, PasswordResetTokenRepository tokenRepository, PasswordEncoder encoder, EmailService emailService) {
     this.userRepository = userRepository;
     this.passwordEncoder = passwordEncoder;
+    this.tokenRepository = tokenRepository;
+    this.encoder = encoder;
+    this.emailService = emailService;
   }
 
   @Override
@@ -89,7 +99,6 @@ public class UserServiceImpl implements UserService {
     user.setPassword(passwordEncoder.encode(userDto.getPassword()));
     userRepository.save(user);
   }
-
 
   @Override
   public UserDTO toDto(User user) {

@@ -26,6 +26,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { AllTasksComponent } from './components/all-tasks/all-tasks.component';
 import { RegisterInviteComponent } from './components/register-invite/register-invite.component';
 import { InviteUserComponent } from './components/invite-user/invite-user.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { CreateProjectModalComponent } from './components/create-project-modal/create-project-modal.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { InviteUserComponent } from './components/invite-user/invite-user.compon
     RegisterComponent,
     AllTasksComponent,
     RegisterInviteComponent,
-    InviteUserComponent
+    InviteUserComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

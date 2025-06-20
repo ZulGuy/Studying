@@ -116,6 +116,11 @@ public class TaskController {
       task.setAssignee(userRepository.findById(dto.assigneeId).orElse(null));
     }
 
+    if (dto.getInitiatorId() != null) {
+      task.setInitiator(userRepository.findById(dto.initiatorId).orElse(null));
+    }
+
+
     return ResponseEntity.ok(taskService.updateTask(task));
   }
 
