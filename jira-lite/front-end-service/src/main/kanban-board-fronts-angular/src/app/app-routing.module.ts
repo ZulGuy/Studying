@@ -10,10 +10,15 @@ import {AuthGuard} from "./guards/auth.guard";
 import {LogoutComponent} from "./components/logout/logout.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {InviteUserComponent} from "./components/invite-user/invite-user.component";
+import {ForgotPasswordComponent} from "./components/forgot-password/forgot-password.component";
+import {ResetPasswordComponent} from "./components/reset-password/reset-password.component";
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent }, // відкритий
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+
 
   {
     path: '',

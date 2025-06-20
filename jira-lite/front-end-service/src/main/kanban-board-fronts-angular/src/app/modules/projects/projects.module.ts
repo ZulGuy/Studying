@@ -8,6 +8,12 @@ import {MainViewComponent} from "../../components/main-view/main-view.component"
 import { ProjectLayoutComponent } from './layouts/project-layout/project-layout.component';
 import {SharedModule} from "../../shared/shared.module";
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import {
+  CreateTaskModalComponent
+} from "../../components/create-task-modal/create-task-modal.component";
+import {
+  CreateProjectModalComponent
+} from "../../components/create-project-modal/create-project-modal.component";
 
 
 @NgModule({
@@ -15,7 +21,9 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     ProjectsListComponent,
     ProjectBoardComponent,
     MainViewComponent,
-    ProjectLayoutComponent
+    ProjectLayoutComponent,
+    CreateTaskModalComponent,
+    CreateProjectModalComponent
   ],
   imports: [
     CommonModule,

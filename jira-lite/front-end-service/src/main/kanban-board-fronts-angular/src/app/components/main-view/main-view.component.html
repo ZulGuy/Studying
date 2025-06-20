@@ -3,7 +3,14 @@
     <div class="navbar-brand">
       <div class="navbar-item">
         <h1 class="app-name has-gradient-text">{{board.name}}</h1>
-        <button class="btn btn-primary m-3" (click)="openCreateTaskModal()">Створити задачу</button>
+        <button class="btn btn-primary" (click)="showCreateTaskModal = true">Створити задачу</button>
+        <app-create-task-modal
+          *ngIf="showCreateTaskModal"
+          [projectId]="projectId"
+          [initiatorId]="currentUserId"
+          (close)="showCreateTaskModal = false"
+          (taskCreated)="handleTaskCreated($event)">
+        </app-create-task-modal>
       </div>
     </div>
   </div>

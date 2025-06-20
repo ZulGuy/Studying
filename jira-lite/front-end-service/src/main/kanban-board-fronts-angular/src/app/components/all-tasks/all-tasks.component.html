@@ -27,11 +27,12 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let task of paginatedTasks">
+    <tr *ngFor="let task of paginatedTasks" style="cursor:pointer"
+        (click)="goToTask(task.id)">
       <td>{{ task.summary }}</td>
       <td>{{ task.description }}</td>
-      <td>{{ task.assignee?.name || '—' }}</td>
-      <td>{{ task.initiator?.name || '—' }}</td>
+      <td>{{ getUserNameById(task.assigneeId) }}</td>
+      <td>{{ getUserNameById(task.initiatorId) }}</td>
       <td>{{ task.status }}</td>
     </tr>
     </tbody>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { TaskService } from '../../services/task.service';
-import { TaskDTO, TaskStatus } from '../../types/api.types';
+import {TaskDTO, TaskStatus, UserDTO} from '../../types/api.types';
+import {UserService} from "../../services/user.service";
 
 @Component({
   selector: 'app-all-tasks',
@@ -12,6 +13,7 @@ export class AllTasksComponent implements OnInit {
   projectId!: number;
   allTasks: TaskDTO[] = [];
   filteredTasks: TaskDTO[] = [];
+  users: UserDTO[] = [];
 
   filters = {
     summary: '',
@@ -24,7 +26,7 @@ export class AllTasksComponent implements OnInit {
   currentPage = 1;
   itemsPerPage = 10;
 
-  constructor(private taskService: TaskService, private route: ActivatedRoute) {}
+  constructor(private taskService: TaskService, private route: ActivatedRoute, private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.route.parent?.paramMap.subscribe(params => {
@@ -34,6 +36,7 @@ export class AllTasksComponent implements OnInit {
         this.loadTasks();
       }
     });
+    this.loadUsers();
   }
 
   loadTasks() {
@@ -73,4 +76,22 @@ export class AllTasksComponent implements OnInit {
   prevPage() {
     if (this.currentPage > 1) this.currentPage--;
   }
+
+  loadUsers() {
+    this.userService.getAll().subscribe(users => this.users = users);
+  }
+
+  getUserNameById(id: number | null | undefined): string {
+    if (!id) return '—';
+    const user = this.users.find(u => u.id === id);
+    return user ? user.name || user.email : '—';
+  }
+
+  goToTask(taskId: number) {
+    // Якщо у вас проектId є у роуті, тоді треба вставити і його:
+    // this.router.navigate(['../task', taskId], { relativeTo: this.route });
+    // або:
+    this.router.navigate(['/task', taskId]);
+  }
+
 }

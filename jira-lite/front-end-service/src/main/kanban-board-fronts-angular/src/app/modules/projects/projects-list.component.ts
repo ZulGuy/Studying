@@ -11,6 +11,7 @@ import { ProjectDTO } from "../../types/api.types";
 })
 export class ProjectsListComponent implements OnInit {
   projects: ProjectDTO[] = [];
+  showCreateProjectModal = false;
 
   constructor(
     private projectService: ProjectService,
@@ -52,6 +53,13 @@ export class ProjectsListComponent implements OnInit {
         this.projects = this.projects.filter(p => p.id !== project.id);
       });
     }
+  }
+
+  handleProjectCreated(event: { name: string, description: string }) {
+    this.projectService.createProject({ name: event.name, description: event.description })
+    .subscribe(() => {
+      this.projectService.getAll().subscribe(data => this.projects = data);
+    });
   }
 
 
