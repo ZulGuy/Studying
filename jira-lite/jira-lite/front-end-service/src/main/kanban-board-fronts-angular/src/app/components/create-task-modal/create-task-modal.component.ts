@@ -1,10 +1,14 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from "@angular/core";
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-create-task-modal',
   templateUrl: './create-task-modal.component.html',
-  styleUrls: ['./create-task-modal.component.scss']
+  styleUrls: ['./create-task-modal.component.scss'],
+  imports: [FormsModule, CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateTaskModalComponent {
   @Input() projectId!: number;

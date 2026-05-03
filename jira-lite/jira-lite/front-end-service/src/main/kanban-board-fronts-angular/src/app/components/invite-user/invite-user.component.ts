@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {environment} from "../../../environments/environment";
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-invite-user',
   templateUrl: './invite-user.component.html',
-  styleUrls: ['./invite-user.component.scss']
+  styleUrls: ['./invite-user.component.scss'],
+  imports: [FormsModule, CommonModule]
 })
 export class InviteUserComponent {
   email = '';

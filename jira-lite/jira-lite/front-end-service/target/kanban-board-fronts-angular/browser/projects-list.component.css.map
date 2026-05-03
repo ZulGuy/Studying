@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/modules/projects/projects-list.component.scss"],
-  "sourcesContent": [".project-card {\r\n  cursor: pointer;\r\n  transition: transform 0.15s ease, box-shadow 0.15s ease;\r\n\r\n  &:hover {\r\n    transform: translateY(-2px);\r\n    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);\r\n  }\r\n\r\n  .card-title {\r\n    font-weight: 600;\r\n    color: #212529;\r\n  }\r\n\r\n  .card-text {\r\n    font-size: 0.875rem;\r\n  }\r\n}\r\n"],
-  "mappings": ";AAAA,CAAA;AACE,UAAA;AACA,cAAA,UAAA,MAAA,IAAA,EAAA,WAAA,MAAA;;AAEA,CAJF,YAIE;AACE,aAAA,WAAA;AACA,cAAA,EAAA,IAAA,KAAA,KAAA,CAAA,EAAA,CAAA,EAAA,CAAA,EAAA;;AAGF,CATF,aASE,CAAA;AACE,eAAA;AACA,SAAA;;AAGF,CAdF,aAcE,CAAA;AACE,aAAA;;",
-  "names": []
-}

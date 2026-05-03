@@ -1,11 +1,15 @@
 // src/app/components/create-project-modal/create-project-modal.component.ts
-import { Component, EventEmitter, Output } from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-create-project-modal',
   templateUrl: './create-project-modal.component.html',
-  styleUrls: ['./create-project-modal.component.scss']
+  styleUrls: ['./create-project-modal.component.scss'],
+  imports: [FormsModule, CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateProjectModalComponent {
   @Output() close = new EventEmitter<void>();

@@ -1,12 +1,15 @@
 import {Component} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
+  imports: [FormsModule, CommonModule, RouterLink]
 })
 export class RegisterComponent {
   form = {

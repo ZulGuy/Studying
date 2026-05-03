@@ -3,12 +3,15 @@ import { Router } from "@angular/router";
 import { ProjectService } from '../../services/project.service';
 import { RecentProjectService } from '../../services/recent-project.service';
 import { ProjectDTO } from "../../types/api.types";
+import {CommonModule} from "@angular/common";
+import {CreateProjectModalComponent} from "../../components/create-project-modal/create-project-modal.component";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-projects-list',
   templateUrl: './projects-list.component.html',
-  styleUrls: ['./projects-list.component.scss']
+  styleUrls: ['./projects-list.component.scss'],
+  imports: [CommonModule, CreateProjectModalComponent]
 })
 export class ProjectsListComponent implements OnInit {
   projects: ProjectDTO[] = [];

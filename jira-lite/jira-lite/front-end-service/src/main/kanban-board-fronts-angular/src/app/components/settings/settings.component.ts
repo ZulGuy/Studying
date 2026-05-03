@@ -4,12 +4,17 @@ import {ActivatedRoute} from "@angular/router";
 import {ProjectUserDTO, UserDTO} from "../../types/api.types";
 import {AuthService} from "../../services/auth.service";
 import {UserService} from "../../services/user.service";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import {RoleModalComponent} from "../role-modal/role-modal.component";
+import {AddUserModalComponent} from "../add-user-modal/add-user-modal.component";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.scss']
+  styleUrls: ['./settings.component.scss'],
+  imports: [CommonModule, FormsModule, RoleModalComponent, AddUserModalComponent]
 })
 export class SettingsComponent implements OnInit {
   projectId: number | null = null;

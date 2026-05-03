@@ -1,8 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 import { CommentService } from '../../services/comment.service';
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-comments',
   template: `
     <div *ngIf="taskId">
@@ -14,7 +16,9 @@ import { CommentService } from '../../services/comment.service';
         <button type="submit">Add</button>
       </form>
     </div>
-  `
+  `,
+  imports: [CommonModule, FormsModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CommentsComponent implements OnInit {
   @Input() taskId!: number;

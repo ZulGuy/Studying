@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomFieldService } from '../../services/custom-field.service';
 import { CustomFieldDTO, FieldType } from '../../types/api.types';
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-custom-field-list',
   templateUrl: './custom-field-list.component.html',
-  styleUrls: ['./custom-field-list.component.scss']
+  styleUrls: ['./custom-field-list.component.scss'],
+  imports: [CommonModule, FormsModule]
 })
 export class CustomFieldListComponent implements OnInit {
   fields: CustomFieldDTO[] = [];

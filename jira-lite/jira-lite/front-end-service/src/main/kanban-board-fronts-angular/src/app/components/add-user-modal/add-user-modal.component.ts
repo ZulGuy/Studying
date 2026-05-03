@@ -1,14 +1,18 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {ProjectUserService} from "../../services/project-user.service";
 import {UserDTO} from "../../types/api.types";
 import {ProjectRole} from "../../types/api.types";
 import {UserService} from "../../services/user.service";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-add-user-modal',
   templateUrl: './add-user-modal.component.html',
-  styleUrls: ['./add-user-modal.component.scss']
+  styleUrls: ['./add-user-modal.component.scss'],
+  imports: [CommonModule, FormsModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddUserModalComponent {
   @Input() projectId!: number;

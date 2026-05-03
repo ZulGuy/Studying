@@ -1,11 +1,14 @@
 import {Component} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
+import {CommonModule} from "@angular/common";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
-  styleUrls: ['./topbar.component.scss']
+  styleUrls: ['./topbar.component.scss'],
+  imports: [CommonModule, RouterLink, RouterLinkActive]
 })
 export class TopbarComponent {
 

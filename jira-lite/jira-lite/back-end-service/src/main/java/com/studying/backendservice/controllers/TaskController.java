@@ -46,7 +46,7 @@ public class TaskController {
   }
 
   @PostMapping
-  public ResponseEntity<Task> createTask(@RequestBody TaskDTO dto,  @AuthenticationPrincipal User userDetails) {
+  public ResponseEntity<TaskDTO> createTask(@RequestBody TaskDTO dto, @AuthenticationPrincipal User userDetails) {
     Task task = new Task();
     task.setSummary(dto.getSummary());
     task.setDescription(dto.getDescription());
@@ -68,12 +68,12 @@ public class TaskController {
         .orElseThrow(() -> new IllegalArgumentException(
             "Project not found with id: " + dto.getProjectId()));
 
-      task.setProject(project);
+    task.setProject(project);
 
     Task createdTask = taskService.createTask(task);
     emailService.sendTaskCreatedNotification(createdTask);
 
-    return ResponseEntity.ok(createdTask);
+    return ResponseEntity.ok(toDto(createdTask));
   }
 
   @GetMapping("/{id}")

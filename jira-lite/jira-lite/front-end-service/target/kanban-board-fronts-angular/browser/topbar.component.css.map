@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/topbar/topbar.component.scss"],
-  "sourcesContent": [".navbar {\r\n  height: 60px;\r\n  background-color: #212529; // темний фон вручну (як у bg-dark)\r\n  padding-left: 1rem;\r\n  padding-right: 1rem;\r\n\r\n  .navbar-nav {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 16px;\r\n\r\n    .nav-link {\r\n      font-weight: 500;\r\n      padding: 8px 12px;\r\n      border-radius: 4px;\r\n      color: #ffffff;\r\n\r\n      &.active {\r\n        background-color: #495057;\r\n        color: #ffffff;\r\n      }\r\n\r\n      &:hover {\r\n        background-color: #596275;\r\n        color: #ffffff;\r\n      }\r\n\r\n      &:focus {\r\n        color: #ffffff;\r\n      }\r\n    }\r\n  }\r\n}\r\n"],
-  "mappings": ";AAAA,CAAA;AACE,UAAA;AACA,oBAAA;AACA,gBAAA;AACA,iBAAA;;AAEA,CANF,OAME,CAAA;AACE,WAAA;AACA,eAAA;AACA,OAAA;;AAEA,CAXJ,OAWI,CALF,WAKE,CAAA;AACE,eAAA;AACA,WAAA,IAAA;AACA,iBAAA;AACA,SAAA;;AAEA,CAjBN,OAiBM,CAXJ,WAWI,CANF,QAME,CAAA;AACE,oBAAA;AACA,SAAA;;AAGF,CAtBN,OAsBM,CAhBJ,WAgBI,CAXF,QAWE;AACE,oBAAA;AACA,SAAA;;AAGF,CA3BN,OA2BM,CArBJ,WAqBI,CAhBF,QAgBE;AACE,SAAA;;",
-  "names": []
-}

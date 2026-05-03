@@ -5,236 +5,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7753f1a7-0d3a-46ed-9280-8870a7379463" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/back-end-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/BackEndServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/configurations/JpaMultiTenantConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/configurations/SchemaMultiTenantConnectionProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/configurations/SchemaTenantIdentifierResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/configurations/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/configurations/TenantContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/configurations/WebConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/CommentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/InvitationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/NavigationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/PasswordResetController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/ProjectController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/ProjectUserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/TaskController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/controllers/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/AddUserToProjectDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/AuthRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/AuthResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/CommentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/ForgotPasswordRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/ProjectDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/ProjectUserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/ResetPasswordRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/TaskDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/UpdateProjectRolesDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/dto/UserDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/filters/JwtAuthenticationFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/models/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/models/InvitationToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/models/PasswordResetToken.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/models/Project.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/models/ProjectUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/models/Task.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/models/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/repositories/CommentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/repositories/InvitationTokenRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/repositories/PasswordResetTokenRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/repositories/ProjectRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/repositories/ProjectUserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/repositories/TaskRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/repositories/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/CommentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/CommentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/EmailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/InvitationService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/JwtService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/PasswordResetService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/ProjectService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/ProjectServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/ProjectUserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/ProjectUserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/SecurityService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/TaskService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/TaskServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/UserDetailsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/services/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/utils/ProjectRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/utils/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/java/com/studying/backendservice/utils/Status.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end-service/src/test/java/com/studying/backendservice/BackEndServiceApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/.browserslistrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/e2e/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/add-user-modal/add-user-modal.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/add-user-modal/add-user-modal.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/add-user-modal/add-user-modal.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/add-user-modal/add-user-modal.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/all-tasks/all-tasks.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/all-tasks/all-tasks.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/all-tasks/all-tasks.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/all-tasks/all-tasks.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/comments/comments.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/comments/comments.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/comments/comments.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/comments/comments.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-project-modal/create-project-modal.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-project-modal/create-project-modal.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-project-modal/create-project-modal.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-project-modal/create-project-modal.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-task-modal/create-task-modal.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-task-modal/create-task-modal.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-task-modal/create-task-modal.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-task-modal/create-task-modal.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/forgot-password/forgot-password.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/forgot-password/forgot-password.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/forgot-password/forgot-password.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/forgot-password/forgot-password.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/home-page/home-page.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/home-page/home-page.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/home-page/home-page.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/home-page/home-page.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/invite-user/invite-user.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/invite-user/invite-user.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/invite-user/invite-user.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/invite-user/invite-user.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/logout/logout.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/logout/logout.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/logout/logout.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/logout/logout.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/profile/profile.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/profile/profile.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/profile/profile.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/profile/profile.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register-invite/register-invite.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register-invite/register-invite.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register-invite/register-invite.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register-invite/register-invite.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register/register.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register/register.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register/register.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register/register.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reports/reports.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reports/reports.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reports/reports.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reports/reports.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reset-password/reset-password.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reset-password/reset-password.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reset-password/reset-password.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reset-password/reset-password.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/role-modal/role-modal.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/role-modal/role-modal.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/role-modal/role-modal.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/role-modal/role-modal.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/settings/settings.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/settings/settings.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/settings/settings.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/settings/settings.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/topbar/topbar.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/topbar/topbar.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/topbar/topbar.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/topbar/topbar.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/user/user.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/user/user.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/user/user.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/user/user.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/users/users.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/users/users.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/users/users.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/users/users.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/guards/auth.guard.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/guards/auth.guard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/models/board.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/models/column.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/layouts/project-layout/project-layout.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/layouts/project-layout/project-layout.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/layouts/project-layout/project-layout.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/layouts/project-layout/project-layout.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/project-board.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/project-board.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/project-board.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects-list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects-list.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects-list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/auth.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/auth.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/comment.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/comment.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/project-user.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/project-user.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/project.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/project.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/recent-project.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/recent-project.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/task.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/task.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/tenant.interceptor.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/tenant.interceptor.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/user.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/services/user.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/shared/shared.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/app/types/api.types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/assets/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/styles/main-styles.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-service/src/main/kanban-board-fronts-angular/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/studying/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/studying/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/BackEndServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/BackEndServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/controllers/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/repositories/CommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/repositories/CommentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/repositories/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/repositories/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/services/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/services/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/BackEndServiceApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/BackEndServiceApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/controllers/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/controllers/TaskController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/repositories/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/repositories/CommentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/repositories/TaskRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/repositories/TaskRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/services/EmailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/services/EmailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/.angular/cache/19.2.25/kanban-board-fronts-angular/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/.angular/cache/19.2.25/kanban-board-fronts-angular/.tsbuildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/.angular/cache/19.2.25/kanban-board-fronts-angular/angular-compiler.db" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/.angular/cache/19.2.25/kanban-board-fronts-angular/angular-compiler.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/add-user-modal/add-user-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/add-user-modal/add-user-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/all-tasks/all-tasks.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/all-tasks/all-tasks.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/comments/comments.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/comments/comments.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-project-modal/create-project-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-project-modal/create-project-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-task-modal/create-task-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/create-task-modal/create-task-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/custom-field-details/custom-field-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/custom-field-details/custom-field-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/custom-field-list/custom-field-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/custom-field-list/custom-field-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/forgot-password/forgot-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/forgot-password/forgot-password.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/home-page/home-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/home-page/home-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/invite-user/invite-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/invite-user/invite-user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/logout/logout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/logout/logout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register-invite/register-invite.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register-invite/register-invite.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reports/reports.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reports/reports.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reset-password/reset-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/reset-password/reset-password.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/role-modal/role-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/role-modal/role-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/settings/settings.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/settings/settings.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-type-details/task-type-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-type-details/task-type-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-type-list/task-type-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-type-list/task-type-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/topbar/topbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/topbar/topbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/user/user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/user/user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/users/users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/layouts/project-layout/project-layout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/layouts/project-layout/project-layout.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/project-board.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/project-board.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/projects.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/shared/shared.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/add-user-modal.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/app.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/chunk-EUCXN6WZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/chunk-EUCXN6WZ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/chunk-NPQY6UCU.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/chunk-NPQY6UCU.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/create-project-modal.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/create-task-modal.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/main-view.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/main.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/media/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/polyfills.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/polyfills.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/project-layout.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/projects-list.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/role-modal.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/settings.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/sidebar.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/styles.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/topbar.component.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts-angular/browser/users.component.css.map" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +148,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Spring Boot.BackEndServiceApplication">
     <configuration name="BackEndServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="back-end-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.studying.backendservice.BackEndServiceApplication" />
@@ -341,7 +187,7 @@
       <workItem from="1777761173729" duration="265000" />
       <workItem from="1777761873330" duration="3088000" />
       <workItem from="1777789501100" duration="1109000" />
-      <workItem from="1777790980760" duration="10797000" />
+      <workItem from="1777790980760" duration="15758000" />
     </task>
     <servers />
   </component>

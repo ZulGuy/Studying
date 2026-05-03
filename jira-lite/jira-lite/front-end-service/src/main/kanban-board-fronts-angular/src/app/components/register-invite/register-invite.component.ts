@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import {environment} from "../../../environments/environment";
+import {FormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-register-invite',
   templateUrl: './register-invite.component.html',
-  styleUrls: ['./register-invite.component.scss']
+  styleUrls: ['./register-invite.component.scss'],
+  imports: [FormsModule, CommonModule]
 })
 export class RegisterInviteComponent implements OnInit {
   token = '';

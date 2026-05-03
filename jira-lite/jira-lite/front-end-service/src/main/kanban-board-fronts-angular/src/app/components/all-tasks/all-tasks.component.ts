@@ -3,12 +3,15 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { TaskService } from '../../services/task.service';
 import {TaskDTO, TaskStatus, UserDTO} from '../../types/api.types';
 import {UserService} from "../../services/user.service";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-all-tasks',
   templateUrl: './all-tasks.component.html',
-  styleUrls: ['./all-tasks.component.scss']
+  styleUrls: ['./all-tasks.component.scss'],
+  imports: [CommonModule, FormsModule]
 })
 export class AllTasksComponent implements OnInit {
   projectId!: number;
