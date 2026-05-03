@@ -5,12 +5,15 @@ import { UserService } from '../../services/user.service';
 import { CommentService } from '../../services/comment.service';
 import { TaskDTO, UserDTO, CommentDTO } from '../../types/api.types';
 import {AuthService} from "../../services/auth.service";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-task-detail',
   templateUrl: './task-detail.component.html',
-  styleUrls: ['./task-detail.component.scss']
+  styleUrls: ['./task-detail.component.scss'],
+  imports: [CommonModule, FormsModule]
 })
 export class TaskDetailComponent implements OnInit {
   task!: TaskDTO;

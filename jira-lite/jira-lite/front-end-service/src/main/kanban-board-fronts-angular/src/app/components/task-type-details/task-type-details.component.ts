@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TaskTypeService } from '../../services/task-type.service';
 import { TaskDTO } from '../../types/api.types';
+import {CommonModule} from "@angular/common";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-task-type-details',
   templateUrl: './task-type-details.component.html',
-  styleUrls: ['./task-type-details.component.scss']
+  styleUrls: ['./task-type-details.component.scss'],
+  imports: [CommonModule]
 })
 export class TaskTypeDetailsComponent implements OnInit {
   typeName = '';

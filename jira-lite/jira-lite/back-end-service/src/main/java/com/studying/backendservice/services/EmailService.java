@@ -7,6 +7,7 @@ import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,6 +16,7 @@ public class EmailService {
   @Autowired
   private JavaMailSender mailSender;
 
+  @Async
   public void sendTaskCreatedNotification(Task task) {
     String to = task.getInitiator().getEmail();
     String subject = "Ваша задача створена";
@@ -27,6 +29,7 @@ public class EmailService {
     sendHtmlEmail(to, subject, html);
   }
 
+  @Async
   public void sendNewCommentNotification(Task task, Comment comment) {
     String to = task.getInitiator().getEmail();
     String subject = "Новий коментар до задачі";
@@ -39,6 +42,7 @@ public class EmailService {
     sendHtmlEmail(to, subject, html);
   }
 
+  @Async
   public void sendHtmlEmail(String to, String subject, String htmlContent) {
     MimeMessage message = mailSender.createMimeMessage();
 

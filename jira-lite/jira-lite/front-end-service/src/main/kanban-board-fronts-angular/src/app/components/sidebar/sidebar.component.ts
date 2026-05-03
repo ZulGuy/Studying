@@ -1,15 +1,17 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {ProjectService} from '../../services/project.service';
 import {ProjectDTO} from '../../types/api.types';
 import {AuthService} from "../../services/auth.service";
 import {ProjectUserService} from "../../services/project-user.service";
+import {CommonModule} from "@angular/common";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
+  imports: [CommonModule, RouterLink]
 })
 export class SidebarComponent implements OnInit {
   project: ProjectDTO | null = null;

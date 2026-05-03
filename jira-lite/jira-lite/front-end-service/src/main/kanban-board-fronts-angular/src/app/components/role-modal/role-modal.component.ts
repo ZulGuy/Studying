@@ -2,12 +2,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {ProjectUserService} from "../../services/project-user.service";
 import {ProjectRole} from "../../types/api.types";
 import {ProjectUserDTO} from "../../types/api.types";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-role-modal',
   templateUrl: './role-modal.component.html',
-  styleUrls: ['./role-modal.component.scss']
+  styleUrls: ['./role-modal.component.scss'],
+  imports: [CommonModule, FormsModule]
 })
 export class RoleModalComponent {
   @Input() user: ProjectUserDTO;

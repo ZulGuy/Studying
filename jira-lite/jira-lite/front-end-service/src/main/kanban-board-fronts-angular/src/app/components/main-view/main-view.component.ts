@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, DragDropModule } from '@angular/cdk/drag-drop';
 import { ProjectService } from '../../services/project.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TaskDTO, TaskStatus } from '../../types/api.types';
 import {Column} from "../../models/column.model";
 import {TaskService} from "../../services/task.service";
 import {AuthService} from "../../services/auth.service";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import {CreateTaskModalComponent} from "../create-task-modal/create-task-modal.component";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-main-view',
   templateUrl: './main-view.component.html',
-  styleUrls: ['./main-view.component.scss']
+  styleUrls: ['./main-view.component.scss'],
+  imports: [CommonModule, FormsModule, DragDropModule, CreateTaskModalComponent]
 })
 export class MainViewComponent implements OnInit {
   board = {
@@ -61,22 +65,29 @@ export class MainViewComponent implements OnInit {
 
     if (oldStatus === newStatus) return;
 
-    const previousList = event.previousContainer.data;
-    const currentList = event.container.data;
-    const previousIndex = event.previousIndex;
-
     task.status = newStatus;
+    transferArrayItem(event.previousContainer.data, event.container.data,
+      event.previousIndex, event.currentIndex);
+
 
     this.taskService.updateTask(task).subscribe({
       next: () => {
         if (newStatus === 'DONE') {
-          this.loadTasks();
-        } else {
-          transferArrayItem(previousList, currentList, previousIndex, event.currentIndex);
+          const doneColumn =
+            this.board.columns.find(c => c.name === newStatus)
+          if (doneColumn) {
+            doneColumn.tasks = doneColumn.tasks.filter(t => t.id !== task.id);
+          }
         }
       },
       error: () => {
         task.status = oldStatus;
+        transferArrayItem(
+          event.container.data,
+          event.previousContainer.data,
+          event.currentIndex,
+          event.previousIndex
+        );
       }
     });
   }
@@ -119,7 +130,18 @@ export class MainViewComponent implements OnInit {
 
 
   handleTaskCreated(task: any) {
-    this.taskService.createTask(task).subscribe(() => this.loadTasks());
+    this.taskService.createTask(task).subscribe({
+      next: (createdTask) => {
+        const status = createdTask.status || 'TODO';
+        const column =
+          this.board.columns.find(c => c.name === status);
+        if (column) {
+          column.tasks.push(createdTask);
+        }
+        this.showCreateTaskModal = false;
+      },
+      error: (err) => console.error('Failed to create task', err)
+    });
   }
 
 }

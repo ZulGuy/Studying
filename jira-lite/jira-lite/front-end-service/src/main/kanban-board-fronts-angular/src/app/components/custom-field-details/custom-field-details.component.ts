@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CustomFieldService } from '../../services/custom-field.service';
 import { CustomFieldDTO } from '../../types/api.types';
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-custom-field-details',
   templateUrl: './custom-field-details.component.html',
-  styleUrls: ['./custom-field-details.component.scss']
+  styleUrls: ['./custom-field-details.component.scss'],
+  imports: [CommonModule, FormsModule]
 })
 export class CustomFieldDetailsComponent implements OnInit {
   field: CustomFieldDTO | null = null;

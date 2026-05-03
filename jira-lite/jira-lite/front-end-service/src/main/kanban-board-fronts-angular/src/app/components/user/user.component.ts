@@ -3,12 +3,15 @@ import {UserService} from "../../services/user.service";
 import {ActivatedRoute} from "@angular/router";
 import {UserDTO} from "../../types/api.types";
 import {AuthService} from "../../services/auth.service";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.scss']
+  styleUrls: ['./user.component.scss'],
+  imports: [CommonModule, FormsModule]
 })
 export class UserComponent implements OnInit {
   user: UserDTO;

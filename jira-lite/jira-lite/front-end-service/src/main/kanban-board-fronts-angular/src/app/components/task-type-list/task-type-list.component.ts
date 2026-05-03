@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskTypeService } from '../../services/task-type.service';
 import { TaskTypeDTO } from '../../types/api.types';
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-task-type-list',
   templateUrl: './task-type-list.component.html',
-  styleUrls: ['./task-type-list.component.scss']
+  styleUrls: ['./task-type-list.component.scss'],
+  imports: [CommonModule, FormsModule]
 })
 export class TaskTypeListComponent implements OnInit {
   taskTypes: TaskTypeDTO[] = [];

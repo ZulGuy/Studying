@@ -4,12 +4,15 @@ import {Router} from "@angular/router";
 import {UserDTO} from "../../types/api.types";
 import {AuthService} from "../../services/auth.service";
 import {HttpClient} from "@angular/common/http";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.scss']
+  styleUrls: ['./users.component.scss'],
+  imports: [CommonModule, FormsModule]
 })
 export class UsersComponent implements OnInit {
   users: UserDTO[] = [];

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/components/settings/settings.component.scss"],
-  "sourcesContent": ["table {\r\n  font-size: 0.95rem;\r\n\r\n  th {\r\n    background-color: #f8f9fa;\r\n    text-transform: uppercase;\r\n    font-size: 0.8rem;\r\n    letter-spacing: 0.5px;\r\n  }\r\n\r\n  td {\r\n    vertical-align: middle;\r\n  }\r\n\r\n  .badge {\r\n    font-size: 0.75rem;\r\n    padding: 5px 8px;\r\n    border-radius: 6px;\r\n  }\r\n\r\n  .btn {\r\n    font-size: 0.8rem;\r\n    padding: 4px 8px;\r\n  }\r\n}\r\n\r\nbutton.btn-primary {\r\n  font-weight: 500;\r\n}\r\n"],
-  "mappings": ";AAAA;AACE,aAAA;;AAEA,MAAA;AACE,oBAAA;AACA,kBAAA;AACA,aAAA;AACA,kBAAA;;AAGF,MAAA;AACE,kBAAA;;AAGF,MAAA,CAAA;AACE,aAAA;AACA,WAAA,IAAA;AACA,iBAAA;;AAGF,MAAA,CAAA;AACE,aAAA;AACA,WAAA,IAAA;;AAIJ,MAAA,CAAA;AACE,eAAA;;",
-  "names": []
-}

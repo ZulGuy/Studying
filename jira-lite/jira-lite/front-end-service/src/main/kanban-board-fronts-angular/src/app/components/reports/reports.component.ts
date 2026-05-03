@@ -4,12 +4,15 @@ import { TaskService } from '../../services/task.service';
 import { TaskDTO, TaskStatus } from '../../types/api.types';
 import {Chart, ChartData, ChartType, registerables} from 'chart.js';
 import { Subscription } from 'rxjs';
+import {CommonModule} from "@angular/common";
+import {BaseChartDirective} from "ng2-charts";
 
 @Component({
-  standalone: false,
+  standalone: true,
   selector: 'app-reports',
   templateUrl: './reports.component.html',
-  styleUrls: ['./reports.component.scss']
+  styleUrls: ['./reports.component.scss'],
+  imports: [CommonModule, BaseChartDirective]
 })
 export class ReportsComponent implements OnInit, OnDestroy {
   tasks: TaskDTO[] = [];
