@@ -1,0 +1,85 @@
+<div class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Reports</div>
+      <div class="page-subtitle">Overview of project issue status</div>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card stat-total">
+      <div class="stat-label">Total Issues</div>
+      <div class="stat-value">{{ tasks.length }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">To Do</div>
+      <div class="stat-value todo">{{ statusCounts.TODO }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">In Progress</div>
+      <div class="stat-value in-progress">{{ statusCounts.IN_PROGRESS }}</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Done</div>
+      <div class="stat-value done">{{ statusCounts.DONE }}</div>
+    </div>
+  </div>
+
+  <div class="charts-row">
+    <div class="chart-card">
+      <div class="chart-title">Distribution</div>
+      <div class="chart-container">
+        <canvas baseChart
+                [data]="doughnutChartData"
+                [type]="doughnutChartType"
+                [options]="doughnutChartOptions">
+        </canvas>
+      </div>
+    </div>
+
+    <div class="breakdown-card">
+      <div class="chart-title">Breakdown</div>
+
+      <div *ngIf="tasks.length > 0; else noData" class="breakdown-list">
+        <div class="breakdown-row">
+          <span class="breakdown-label">To Do</span>
+          <div class="breakdown-bar">
+            <div class="breakdown-fill fill-todo" [style.width.%]="getPercent(statusCounts.TODO)"></div>
+          </div>
+          <span class="breakdown-count">{{ statusCounts.TODO }}</span>
+          <span class="breakdown-pct">{{ getPercent(statusCounts.TODO) }}%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">In Progress</span>
+          <div class="breakdown-bar">
+            <div class="breakdown-fill fill-progress" [style.width.%]="getPercent(statusCounts.IN_PROGRESS)"></div>
+          </div>
+          <span class="breakdown-count">{{ statusCounts.IN_PROGRESS }}</span>
+          <span class="breakdown-pct">{{ getPercent(statusCounts.IN_PROGRESS) }}%</span>
+        </div>
+        <div class="breakdown-row">
+          <span class="breakdown-label">Done</span>
+          <div class="breakdown-bar">
+            <div class="breakdown-fill fill-done" [style.width.%]="getPercent(statusCounts.DONE)"></div>
+          </div>
+          <span class="breakdown-count">{{ statusCounts.DONE }}</span>
+          <span class="breakdown-pct">{{ getPercent(statusCounts.DONE) }}%</span>
+        </div>
+
+        <div class="completion-row">
+          <span class="completion-label">Completion</span>
+          <div class="completion-bar">
+            <div class="completion-fill" [style.width.%]="getPercent(statusCounts.DONE)"></div>
+          </div>
+          <span class="completion-pct">{{ getPercent(statusCounts.DONE) }}%</span>
+        </div>
+      </div>
+
+      <ng-template #noData>
+        <div class="no-data">
+          <p>No issues found for this project.</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

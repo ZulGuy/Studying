@@ -1,0 +1,36 @@
+@use '../create-task-modal/create-task-modal.component' as *;
+
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.role-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+}
+
+.role-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.no-roles {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding: 8px 0;
+}
+
+.add-role-row {
+  display: flex;
+  gap: 8px;
+  .form-select { flex: 1; }
+}

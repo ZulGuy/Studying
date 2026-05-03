@@ -1,0 +1,32 @@
+<div class="page">
+  <div class="page-header">
+    <div class="page-title">User Details</div>
+  </div>
+
+  <div class="user-card">
+    <div class="user-header">
+      <div class="user-avatar">{{ user?.name?.charAt(0) }}</div>
+      <div class="user-meta">
+        <div class="user-name">{{ user?.name }}</div>
+        <div class="user-email">{{ user?.email }}</div>
+      </div>
+      <span class="badge" [ngClass]="user?.active ? 'bg-success' : 'bg-danger'">
+        {{ user?.active ? 'Active' : 'Inactive' }}
+      </span>
+    </div>
+
+    <div class="user-actions">
+      <div class="field" *ngIf="authService.isSystemAdmin() && user">
+        <label class="form-label">System role</label>
+        <select [(ngModel)]="user.role" class="form-select" style="max-width: 220px;" (ngModelChange)="updateRole()">
+          <option value="ROLE_USER">User</option>
+          <option value="ROLE_ADMIN">Administrator</option>
+        </select>
+      </div>
+
+      <button class="btn btn-outline-warning btn-sm" (click)="toggleActive()">
+        {{ user?.active ? 'Deactivate user' : 'Activate user' }}
+      </button>
+    </div>
+  </div>
+</div>

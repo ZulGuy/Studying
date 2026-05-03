@@ -1,0 +1,38 @@
+<div class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Projects</div>
+      <div class="page-subtitle">{{ projects.length }} project{{ projects.length !== 1 ? 's' : '' }} in your workspace</div>
+    </div>
+    <button class="btn btn-primary" (click)="showCreateProjectModal = true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      New project
+    </button>
+  </div>
+
+  <app-create-project-modal
+    *ngIf="showCreateProjectModal"
+    (close)="showCreateProjectModal = false"
+    (projectCreated)="handleProjectCreated($event)">
+  </app-create-project-modal>
+
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects" (click)="openProject(project)">
+      <div class="project-card-body">
+        <div class="project-icon">{{ project.name?.charAt(0) }}</div>
+        <div class="project-details">
+          <div class="project-name">{{ project.name }}</div>
+          <div class="project-desc">{{ project.description || 'No description' }}</div>
+        </div>
+        <div class="project-card-actions" (click)="$event.stopPropagation()">
+          <button class="btn btn-outline-danger btn-sm" (click)="deleteProject(project, $event)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="projects.length === 0" class="empty-state">
+    <p>No projects yet. Create your first project to get started.</p>
+    <button class="btn btn-primary btn-sm" (click)="showCreateProjectModal = true">Create project</button>
+  </div>
+</div>

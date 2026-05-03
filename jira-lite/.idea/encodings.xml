@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/back-end-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/front-end-service/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/front-end-service/target/kanban-board-fronts" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jira-lite/back-end-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jira-lite/front-end-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jira-lite/front-end-service/target/kanban-board-fronts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jira-lite/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jira-lite/src/main/resources" charset="UTF-8" />
   </component>
 </project>

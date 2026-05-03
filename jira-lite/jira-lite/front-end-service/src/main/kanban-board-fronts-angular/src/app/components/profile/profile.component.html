@@ -1,0 +1,16 @@
+<div class="page">
+  <div class="page-header">
+    <div class="page-title">My Profile</div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-avatar">{{ user?.name?.charAt(0) }}</div>
+    <div class="profile-info">
+      <div class="profile-name">{{ user?.name }}</div>
+      <div class="profile-email">{{ user?.email }}</div>
+    </div>
+    <span class="badge" [class.bg-success]="user?.active" [class.bg-danger]="!user?.active">
+      {{ user?.active ? 'Active' : 'Inactive' }}
+    </span>
+  </div>
+</div>

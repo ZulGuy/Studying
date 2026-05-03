@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.scss"],
+  "sourcesContent": [".layout {\r\n  display: flex;\r\n  height: calc(100vh - 60px);\r\n}\r\n\r\n.content {\r\n  flex-grow: 1;\r\n  padding: 20px;\r\n  overflow: auto;\r\n  background-image: url(\"../assets/background.png\");\r\n}\r\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,UAAA,KAAA,MAAA,EAAA;;AAGF,CAAA;AACE,aAAA;AACA,WAAA;AACA,YAAA;AACA,oBAAA;;",
+  "names": []
+}

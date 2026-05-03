@@ -1,0 +1,86 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 20px;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+
+  .brand-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
+  }
+
+  .brand-name {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+}
+
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+
+  .nav-item {
+    padding: 5px 10px;
+    border-radius: var(--radius);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all var(--t);
+
+    &:hover {
+      color: var(--text-primary);
+      background-color: var(--bg-elevated);
+    }
+
+    &.active {
+      color: var(--text-primary);
+      background-color: var(--bg-elevated);
+    }
+  }
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  .btn-signout {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: var(--radius);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all var(--t);
+
+    svg { width: 14px; height: 14px; }
+
+    &:hover {
+      color: var(--danger);
+      background-color: var(--danger-muted);
+    }
+  }
+}

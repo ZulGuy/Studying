@@ -1,0 +1,56 @@
+<div class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">All Issues</div>
+      <div class="page-subtitle">{{ paginatedTasks.length }} of {{ filteredTasks?.length }} issues</div>
+    </div>
+  </div>
+
+  <div class="filters">
+    <input class="form-control filter-input" placeholder="Summary" [(ngModel)]="filters.summary" (input)="applyFilters()"/>
+    <input class="form-control filter-input" placeholder="Description" [(ngModel)]="filters.description" (input)="applyFilters()"/>
+    <input class="form-control filter-input" placeholder="Assignee" [(ngModel)]="filters.assignee" (input)="applyFilters()"/>
+    <input class="form-control filter-input" placeholder="Reporter" [(ngModel)]="filters.reporter" (input)="applyFilters()"/>
+    <select class="form-select filter-select" [(ngModel)]="filters.status" (change)="applyFilters()">
+      <option value="">Any status</option>
+      <option value="TODO">To Do</option>
+      <option value="IN_PROGRESS">In Progress</option>
+      <option value="DONE">Done</option>
+    </select>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Summary</th>
+          <th>Description</th>
+          <th>Assignee</th>
+          <th>Reporter</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of paginatedTasks" (click)="goToTask(task.id)">
+          <td class="fw-bold">{{ task.summary }}</td>
+          <td class="text-secondary">{{ task.description }}</td>
+          <td>{{ getUserNameById(task.assigneeId) }}</td>
+          <td>{{ getUserNameById(task.initiatorId) }}</td>
+          <td>
+            <span class="status-badge" [ngClass]="{
+              'status-todo': task.status === 'TODO',
+              'status-progress': task.status === 'IN_PROGRESS',
+              'status-done': task.status === 'DONE'
+            }">{{ task.status === 'IN_PROGRESS' ? 'In Progress' : task.status === 'TODO' ? 'To Do' : 'Done' }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button class="btn btn-secondary btn-sm" (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <span class="page-info">Page {{ currentPage }} of {{ totalPages }}</span>
+    <button class="btn btn-secondary btn-sm" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>

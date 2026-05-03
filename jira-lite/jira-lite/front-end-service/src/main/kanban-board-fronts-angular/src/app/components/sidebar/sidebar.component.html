@@ -1,0 +1,32 @@
+<aside class="sidebar" [class.collapsed]="isCollapsed">
+  <div class="sidebar-header">
+    <button class="collapse-btn" (click)="toggleCollapse()" [title]="isCollapsed ? 'Expand' : 'Collapse'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line *ngIf="!isCollapsed" x1="18" y1="6" x2="6" y2="18"/>
+        <line *ngIf="!isCollapsed" x1="6" y1="6" x2="18" y2="18"/>
+        <polyline *ngIf="isCollapsed" points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+
+    <div class="project-info" *ngIf="!isCollapsed">
+      <div class="project-avatar">{{ project?.name?.charAt(0) }}</div>
+      <div>
+        <div class="project-name">{{ project?.name }}</div>
+        <div class="project-desc">{{ project?.description }}</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ng-container *ngFor="let link of links">
+      <a *ngIf="!link.requiresAdmin || canManageProject"
+         class="nav-item"
+         [class.active]="isActive(link.path)"
+         [routerLink]="link.path ? ['/projects', projectId, link.path] : ['/projects', projectId]"
+         [title]="isCollapsed ? link.label : ''">
+        <span class="nav-icon">{{ link.icon }}</span>
+        <span class="nav-label">{{ link.label }}</span>
+      </a>
+    </ng-container>
+  </nav>
+</aside>
