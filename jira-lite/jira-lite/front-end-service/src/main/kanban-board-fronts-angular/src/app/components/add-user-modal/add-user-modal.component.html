@@ -1,0 +1,39 @@
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-panel" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2 class="modal-title">Add member</h2>
+      <button class="modal-close" (click)="closeModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="field">
+        <label class="form-label">Search users</label>
+        <input type="text" class="form-control" placeholder="Type a name..." [(ngModel)]="searchTerm" (input)="filterUsers()" />
+        <span class="result-count">{{ filteredUsers.length }} user{{ filteredUsers.length !== 1 ? 's' : '' }} found</span>
+      </div>
+
+      <div class="field">
+        <label class="form-label">Select user</label>
+        <select class="form-select" [(ngModel)]="selectedUserId">
+          <option value="" disabled selected>Choose a user</option>
+          <option *ngFor="let user of filteredUsers" [ngValue]="user.id">{{ user.name }} — {{ user.email }}</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="form-label">Role</label>
+        <select class="form-select" [(ngModel)]="selectedRole">
+          <option [ngValue]="null" disabled>Choose a role</option>
+          <option *ngFor="let role of availableRoles" [ngValue]="role">{{ role }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+      <button class="btn btn-primary" (click)="addUser()">Add member</button>
+    </div>
+  </div>
+</div>

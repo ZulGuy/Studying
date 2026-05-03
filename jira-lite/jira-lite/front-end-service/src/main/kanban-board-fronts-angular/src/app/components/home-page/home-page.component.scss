@@ -1,0 +1,75 @@
+.page {
+  padding: 24px 28px;
+  max-width: 800px;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.page-title   { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.02em; }
+.page-subtitle { font-size: 0.9rem; color: var(--text-muted); margin-top: 2px; }
+
+.recent-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+}
+
+.recent-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.recent-project {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background: var(--accent-muted);
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.project-info { flex: 1; min-width: 0; }
+.project-name { font-size: 0.9375rem; font-weight: 600; color: var(--text-primary); }
+.project-desc { font-size: 0.8125rem; color: var(--text-muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.empty-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--text-muted);
+  svg { width: 100%; height: 100%; }
+}
+
+.empty-text { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin: 0; }

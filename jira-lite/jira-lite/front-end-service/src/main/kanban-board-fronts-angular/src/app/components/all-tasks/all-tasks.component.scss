@@ -1,0 +1,44 @@
+.page { padding: 22px 26px; }
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.page-title   { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.02em; }
+.page-subtitle { font-size: 0.9rem; color: var(--text-muted); margin-top: 2px; }
+
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  .filter-input  { max-width: 175px; }
+  .filter-select { max-width: 165px; }
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.status-todo     { background: var(--bg-hover); color: var(--text-secondary); }
+.status-progress { background: var(--info-muted); color: var(--info); }
+.status-done     { background: var(--success-muted); color: var(--success); }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  .page-info { font-size: 0.875rem; color: var(--text-muted); }
+}

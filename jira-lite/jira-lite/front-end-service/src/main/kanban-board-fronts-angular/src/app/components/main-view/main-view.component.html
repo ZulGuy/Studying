@@ -1,0 +1,41 @@
+<div class="board-root">
+  <div class="board-topbar">
+    <div class="board-info">
+      <h2 class="board-title">{{ board.name }}</h2>
+      <span class="board-desc">{{ board.description }}</span>
+    </div>
+    <button class="btn btn-primary btn-sm" (click)="showCreateTaskModal = true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Create issue
+    </button>
+    <app-create-task-modal
+      *ngIf="showCreateTaskModal"
+      [projectId]="projectId"
+      [initiatorId]="currentUserId"
+      (close)="showCreateTaskModal = false"
+      (taskCreated)="handleTaskCreated($event)">
+    </app-create-task-modal>
+  </div>
+
+  <div class="board-columns" cdkDropListGroup>
+    <div class="board-column" *ngFor="let column of board.columns">
+      <div class="column-header">
+        <span class="column-name">{{ column.name }}</span>
+        <span class="column-count">{{ column.tasks.length }}</span>
+      </div>
+      <div class="tasks-drop-zone"
+           cdkDropList
+           [cdkDropListData]="column.tasks"
+           (cdkDropListDropped)="drop($event, column.name)">
+        <div class="task-card" *ngFor="let item of column.tasks" (click)="openTask(item)" cdkDrag>
+          <div class="task-summary">{{ item.summary }}</div>
+          <div class="task-desc" *ngIf="item.description">{{ item.description }}</div>
+          <div class="task-meta">
+            <span *ngIf="item.assignee" class="task-assignee">{{ item.assignee.name }}</span>
+            <span *ngIf="item.initiator" class="task-reporter text-muted">{{ item.initiator.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

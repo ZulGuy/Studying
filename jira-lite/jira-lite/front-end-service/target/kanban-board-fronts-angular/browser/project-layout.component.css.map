@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/modules/projects/layouts/project-layout/project-layout.component.scss"],
+  "sourcesContent": [".project-layout {\r\n  display: flex;\r\n  height: 100%;\r\n  overflow: hidden; // 🔒 прибрати глобальні скролбари\r\n}\r\n\r\n.project-content {\r\n  flex-grow: 1;\r\n  padding: 24px;\r\n  overflow: auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,UAAA;AACA,YAAA;;AAGF,CAAA;AACE,aAAA;AACA,WAAA;AACA,YAAA;AACA,WAAA;AACA,kBAAA;;",
+  "names": []
+}

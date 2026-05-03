@@ -1,0 +1,25 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div *ngIf="!valid && checked" class="alert alert-danger">
+      This invitation link is invalid or has already been used.
+    </div>
+
+    <div *ngIf="valid">
+      <div class="auth-header">
+        <h1 class="auth-title">Accept invitation</h1>
+        <p class="auth-subtitle">Complete your account setup</p>
+      </div>
+      <form (ngSubmit)="submit()" class="auth-form">
+        <div class="field">
+          <label class="form-label">Full name</label>
+          <input type="text" [(ngModel)]="user.name" name="name" class="form-control" placeholder="Your name" required />
+        </div>
+        <div class="field">
+          <label class="form-label">Password</label>
+          <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Create a password" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Join Workspace</button>
+      </form>
+    </div>
+  </div>
+</div>

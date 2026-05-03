@@ -1,0 +1,7 @@
+@use '../create-task-modal/create-task-modal.component' as *;
+
+.result-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+}

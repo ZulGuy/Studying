@@ -1,0 +1,33 @@
+<div class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Dashboard</div>
+      <div class="page-subtitle">Welcome back</div>
+    </div>
+    <a routerLink="/projects" class="btn btn-primary">Browse projects</a>
+  </div>
+
+  <div *ngIf="recentProject; else noRecent" class="recent-card">
+    <div class="recent-label">Recently opened</div>
+    <div class="recent-project">
+      <div class="project-icon">{{ recentProject.name?.charAt(0) }}</div>
+      <div class="project-info">
+        <div class="project-name">{{ recentProject.name }}</div>
+        <div class="project-desc">{{ recentProject.description }}</div>
+      </div>
+      <a [routerLink]="['/projects', recentProject.id]" class="btn btn-outline-primary btn-sm">Open project</a>
+    </div>
+  </div>
+
+  <ng-template #noRecent>
+    <div class="empty-state">
+      <div class="empty-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+        </svg>
+      </div>
+      <p class="empty-text">No recently opened projects.<br>Start by browsing your projects.</p>
+      <a routerLink="/projects" class="btn btn-outline-primary btn-sm">Go to projects</a>
+    </div>
+  </ng-template>
+</div>

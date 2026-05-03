@@ -1,0 +1,28 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1 class="auth-title">Sign in</h1>
+      <p class="auth-subtitle">Welcome back to JiraLite</p>
+    </div>
+
+    <form (ngSubmit)="login()" class="auth-form">
+      <div class="field">
+        <label for="username" class="form-label">Username</label>
+        <input [(ngModel)]="username" name="username" id="username" class="form-control" required autocomplete="username" />
+      </div>
+      <div class="field">
+        <label for="password" class="form-label">Password</label>
+        <input [(ngModel)]="password" name="password" id="password" type="password" class="form-control" required autocomplete="current-password" />
+      </div>
+      <div class="forgot-link">
+        <a routerLink="/forgot-password">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+      <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+    </form>
+
+    <div class="auth-footer">
+      Don't have an account? <a routerLink="/register">Create one</a>
+    </div>
+  </div>
+</div>

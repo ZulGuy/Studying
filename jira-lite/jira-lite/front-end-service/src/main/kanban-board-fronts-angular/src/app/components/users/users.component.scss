@@ -1,0 +1,31 @@
+.page { padding: 22px 26px; }
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.page-title   { font-size: 1.375rem; font-weight: 700; letter-spacing: -0.02em; }
+.page-subtitle { font-size: 0.9rem; color: var(--text-muted); margin-top: 2px; }
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  .search   { max-width: 300px; }
+  .per-page { max-width: 150px; }
+}
+
+.row-actions { display: flex; gap: 6px; }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  .page-info { font-size: 0.875rem; color: var(--text-muted); }
+}

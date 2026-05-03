@@ -1,0 +1,53 @@
+<div *ngIf="checkManageAccess()" class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Project members</div>
+      <div class="page-subtitle">Manage roles and access</div>
+    </div>
+    <button class="btn btn-primary btn-sm" (click)="openAddUserModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Add member
+    </button>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Roles</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of projectUsers">
+          <td class="fw-bold">{{ user.name }}</td>
+          <td class="text-secondary">{{ user.email }}</td>
+          <td>
+            <span *ngIf="user.roles && user.roles.length" class="roles-text">{{ user.roles.join(', ') }}</span>
+            <span *ngIf="!user.roles?.length" class="text-muted">—</span>
+          </td>
+          <td>
+            <button class="btn btn-outline-secondary btn-sm" (click)="openRoleModal(user)">Edit roles</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-role-modal
+    *ngIf="selectedUser && checkManageAccess()"
+    [projectId]="projectId"
+    [user]="selectedUser"
+    (rolesChanged)="loadUsers()"
+    (close)="selectedUser = null">
+  </app-role-modal>
+
+  <app-add-user-modal
+    *ngIf="addingUser && projectId && checkManageAccess()"
+    [projectId]="projectId"
+    (userAddedToProject)="loadUsers()"
+    (close)="addingUser = false">
+  </app-add-user-modal>
+</div>
