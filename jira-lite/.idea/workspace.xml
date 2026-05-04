@@ -5,28 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7753f1a7-0d3a-46ed-9280-8870a7379463" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/src/main/java/com/studying/backendservice/controllers/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/controllers/TaskController.class" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/com/studying/backendservice/controllers/TaskController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/.angular/cache/19.2.25/kanban-board-fronts-angular/.tsbuildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/.angular/cache/19.2.25/kanban-board-fronts-angular/.tsbuildinfo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/main-view/main-view.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/sidebar/sidebar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/task-detail/task-detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/topbar/topbar.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/components/topbar/topbar.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/project-board.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/app/modules/projects/project-board.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/styles/main-styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/src/main/kanban-board-fronts-angular/src/styles/main-styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/src/main/java/com/studying/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/src/test/java/com/studying/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/db/changelog/db.changelog-master.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="259" />
+    <option name="cachedIndexableFilesCount" value="81" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -90,6 +71,7 @@
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/frost/IdeaProjects/studying/Studying/jira-lite&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -107,7 +89,7 @@
       <recent name="C:\Users\frost\IdeaProjects\studying\Studying\jira-lite\jira-lite\back-end-service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackEndServiceApplication">
+  <component name="RunManager" selected="npm.start">
     <configuration name="BackEndServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="back-end-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.studying.backendservice.BackEndServiceApplication" />
@@ -150,6 +132,10 @@
       <workItem from="1777839706892" duration="29000" />
       <workItem from="1777875648880" duration="1743000" />
       <workItem from="1777894569534" duration="4260000" />
+      <workItem from="1777908661535" duration="622000" />
+      <workItem from="1777909295018" duration="136000" />
+      <workItem from="1777909445102" duration="18000" />
+      <workItem from="1777909516682" duration="303000" />
     </task>
     <servers />
   </component>
