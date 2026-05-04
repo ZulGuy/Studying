@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7753f1a7-0d3a-46ed-9280-8870a7379463" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/target/classes/db/changelog/db.changelog-master.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/back-end-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/back-end-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jira-lite/front-end-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jira-lite/front-end-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jira-lite/pom.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,7 @@
       <workItem from="1777908661535" duration="622000" />
       <workItem from="1777909295018" duration="136000" />
       <workItem from="1777909445102" duration="18000" />
-      <workItem from="1777909516682" duration="303000" />
+      <workItem from="1777909516682" duration="1094000" />
     </task>
     <servers />
   </component>
