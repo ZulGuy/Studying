@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TaskService } from '../../services/task.service';
 import { UserService } from '../../services/user.service';
 import { CommentService } from '../../services/comment.service';
@@ -22,14 +22,25 @@ export class TaskDetailComponent implements OnInit {
   comments: CommentDTO[] = [];
   newComment = '';
   canEdit = false;
+  projectId: number;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private taskService: TaskService,
     private userService: UserService,
     private commentService: CommentService,
     public authService: AuthService,
   ) {}
+
+  goBack() {
+    if (!this.task?.projectId) {
+      console.error('projectId is missing', this.task);
+      return;
+    }
+
+    this.router.navigate(['/projects', this.task.projectId]);
+  }
 
   ngOnInit(): void {
     this.taskId = +this.route.snapshot.paramMap.get('id')!;
@@ -41,6 +52,8 @@ export class TaskDetailComponent implements OnInit {
 
   loadTask() {
     this.taskService.getTaskById(this.taskId).subscribe(t => {
+      console.log('TASK:', t);
+
       this.task = t;
 
       this.authService.canEditTask(t.projectId).subscribe(canEdit => {
@@ -56,7 +69,7 @@ export class TaskDetailComponent implements OnInit {
 
   loadComments() {
     this.commentService.getCommentsForTask(this.taskId).subscribe(data => {
-      console.log('Коментарі з сервера:', data); // Додай це
+      console.log('Коментарі з сервера:', data);
       this.comments = data;
     });
   }

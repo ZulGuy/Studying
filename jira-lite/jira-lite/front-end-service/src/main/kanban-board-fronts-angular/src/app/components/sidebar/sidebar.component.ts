@@ -40,15 +40,16 @@ export class SidebarComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.route.parent?.paramMap.subscribe(() => {
-      const id = this.route.firstChild?.snapshot.paramMap.get('id');
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (!id) return;
       this.projectId = id;
 
-      this.projectService.getById(+this.projectId).subscribe(project => {
+      this.projectService.getById(+id).subscribe(project => {
         this.project = project;
       });
 
-      this.projectUserService.getProjectUsers(+this.projectId).subscribe(users => {
+      this.projectUserService.getProjectUsers(+id).subscribe(users => {
         this.projectUsers = users;
 
         const current = this.currentUser;

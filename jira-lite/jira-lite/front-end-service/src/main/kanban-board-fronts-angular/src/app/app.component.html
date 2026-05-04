@@ -1,6 +1,6 @@
-<app-topbar></app-topbar>
+<app-topbar *ngIf="showTopbar"></app-topbar>
 
-<div class="layout">
+<div class="layout" [class.no-topbar]="!showTopbar">
   <div class="content">
     <router-outlet></router-outlet>
   </div>

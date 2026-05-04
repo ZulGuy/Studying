@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from "../../services/project.service";
-import {ProjectDTO} from "../../types/api.types";
-import {CommonModule} from "@angular/common";
-import {MainViewComponent} from "../../components/main-view/main-view.component";
+import { ProjectDTO } from "../../types/api.types";
+import { CommonModule } from "@angular/common";
+import { MainViewComponent } from "../../components/main-view/main-view.component";
 
 @Component({
   standalone: true,
@@ -18,8 +18,13 @@ export class ProjectBoardComponent implements OnInit {
   constructor(private route: ActivatedRoute, private projectService: ProjectService) {}
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id')!;
-    this.projectService.getById(id).subscribe(data => this.project = data);
-    this.projectService.setProject(this.project);
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (!id) return;
+      this.projectService.getById(+id).subscribe(data => {
+        this.project = data;
+        this.projectService.setProject(data);
+      });
+    });
   }
 }

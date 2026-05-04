@@ -42,7 +42,7 @@ export class MainViewComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.parent?.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
         this.projectId = +id;
@@ -128,6 +128,11 @@ export class MainViewComponent implements OnInit {
     });
   }
 
+
+  getColumnLabel(name: string): string {
+    const labels: Record<string, string> = { TODO: 'To Do', IN_PROGRESS: 'In Progress', DONE: 'Done' };
+    return labels[name] || name;
+  }
 
   handleTaskCreated(task: any) {
     this.taskService.createTask(task).subscribe({

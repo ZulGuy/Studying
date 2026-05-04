@@ -1,0 +1,34 @@
+services:
+  backend:
+    build:
+      context:
+        ./back-end-service
+    container_name: backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/jira_lite-db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    depends_on:
+      - db
+  frontend:
+    build:
+      context:
+        ./front-end-service/src/main/kanban-board-fronts-angular
+    container_name: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  db:
+    image: postgres:16-alpine
+    container_name: db
+    environment:
+      POSTGRESS_DB: jira_lite-db
+      POSTGRESS_USER: postgres
+      POSTGRESS_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+volumes:
+  postgres_data:

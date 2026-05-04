@@ -80,17 +80,7 @@ public class TaskController {
   public ResponseEntity<TaskDTO> getTask(@PathVariable int id) {
     Task task = taskService.getTaskById(id);
 
-    TaskDTO dto = new TaskDTO();
-    dto.id = task.getId();
-    dto.summary = task.getSummary();
-    dto.description = task.getDescription();
-    dto.status = task.getStatus();
-
-    if (task.getAssignee() != null)
-      dto.assigneeId = task.getAssignee().getId();
-
-    if (task.getInitiator() != null)
-      dto.initiatorId = task.getInitiator().getId();
+    TaskDTO dto = toDto(task);
 
     // Comments to DTOs
     dto.comments = task.getComments().stream().map(comment -> {
