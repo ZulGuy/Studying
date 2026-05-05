@@ -129,14 +129,13 @@ public class AuthController {
   }
 
   private void setTenant(String tenant) {
-    for(String schema : getAllTenantSchemas()) {
-      if(tenant.equals(schema) && !tenant.equals("pg_catalog")
-          && !tenant.equals("information_schema") && !tenant.equals("pg_toast")) {
+    for (String schema : getAllTenantSchemas()) {
+      if (tenant.equals(schema) && !(tenant.equals("pg_catalog")
+          || tenant.equals("information_schema") || tenant.equals("pg_toast"))) {
         TenantContext.setTenantId(tenant);
-      } else {
-        TenantContext.setTenantId("public");
-        break;
+        return;
       }
     }
+    TenantContext.setTenantId("public");
   }
 }

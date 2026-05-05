@@ -66,16 +66,12 @@ public class ProjectUserServiceImpl implements ProjectUserService {
     ProjectUser pu = projectUserRepository.findByProjectIdAndUserId(projectId, userId)
         .orElseThrow();
 
-    Set<ProjectRole> newRoles = dto.getRoles();
+    Set<ProjectRole> newRoles = dto.getRoles() != null ? dto.getRoles() : new java.util.HashSet<>();
 
-    if (newRoles == null || newRoles.isEmpty()) {
-      projectUserRepository.deleteProjectUserRolesByProjectUserId(pu.getId());
-      entityManager.flush();
+    if (newRoles.isEmpty()) {
       projectUserRepository.deleteById(pu.getId());
     } else {
-      Set<ProjectRole> roles = pu.getRoles();
-      roles.addAll(newRoles);
-      pu.setRoles(roles);
+      pu.setRoles(newRoles);
       projectUserRepository.save(pu);
     }
   }
@@ -94,7 +90,7 @@ public class ProjectUserServiceImpl implements ProjectUserService {
     dto.setName(u.getUsername());
     dto.setEmail(u.getEmail());
     dto.setActive(u.isEnabled());
-    dto.setRoles(pu.getRoles()); // множина
+    dto.setRoles(pu.getRoles());
     return dto;
   }
 }

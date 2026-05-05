@@ -1,0 +1,35 @@
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-panel" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2 class="modal-title">Edit roles — {{ user().name }}</h2>
+      <button class="modal-close" (click)="closeModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <div class="roles-list">
+        <div class="role-item" *ngFor="let role of displayedRoles()">
+          <span class="role-name">{{ role }}</span>
+          <button class="btn btn-outline-danger btn-sm" (click)="removeRole(role)">Remove</button>
+        </div>
+        <div *ngIf="!user().roles?.length" class="no-roles">No roles assigned</div>
+      </div>
+
+      <div class="field">
+        <label class="form-label">Add role</label>
+        <div class="add-role-row">
+          <select class="form-select" [(ngModel)]="selectedRole">
+            <option value="" disabled selected>Select a role</option>
+            <option *ngFor="let role of availableRoles" [value]="role">{{ role }}</option>
+          </select>
+          <button class="btn btn-primary btn-sm" (click)="addRole()">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-secondary" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>

@@ -6,16 +6,15 @@ services:
     container_name: backend
     ports:
       - "8080:8080"
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/jira_lite-db
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=postgres
+    env_file:
+      - ./environment.env
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   frontend:
     build:
       context:
-        ./front-end-service/src/main/kanban-board-fronts-angular
+        ./front-end-service
     container_name: frontend
     ports:
       - "80:80"
@@ -24,11 +23,14 @@ services:
   db:
     image: postgres:16-alpine
     container_name: db
-    environment:
-      POSTGRESS_DB: jira_lite-db
-      POSTGRESS_USER: postgres
-      POSTGRESS_PASSWORD: postgres
+    env_file:
+      - ./environment.env
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d jira_lite"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 volumes:
   postgres_data:
