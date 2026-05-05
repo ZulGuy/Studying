@@ -22,9 +22,6 @@ export class LoginComponent {
 
   login() {
     const tenantId = this.username.includes('@')
-    && (this.username.split('@')[1] === 'public'
-    || this.username.split('@')[1] === 'tennant_01'
-    || this.username.split('@')[1] === 'tennant_02')
       ? this.username.split('@')[1]
       : 'public';
     localStorage.setItem('tenantId', tenantId);
@@ -32,9 +29,9 @@ export class LoginComponent {
 
     this.auth.login({username: this.username, password: this.password}).subscribe({
       next: () => {
-        const redirect = '/';
-        this.router.navigateByUrl(redirect);
-        this.auth.redirectUrl = null; // очищаємо після редіректу
+        this.auth.redirectUrl = null;
+        localStorage.removeItem('recentProject');
+        window.location.href = '/';
       },
       error: () => {
         this.loginFailed = true;

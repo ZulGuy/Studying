@@ -50,7 +50,7 @@ export class MainViewComponent implements OnInit {
         this.loadTasks();
       }
     });
-    this.currentUserId = this.authService.getCurrentUser().id;
+    this.currentUserId = this.authService.getCurrentUser()?.id;
   }
 
 

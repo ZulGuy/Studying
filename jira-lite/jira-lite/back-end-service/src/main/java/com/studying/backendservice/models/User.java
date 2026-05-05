@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Pattern;
 import java.util.Collection;
 import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
@@ -39,6 +40,10 @@ public class User implements UserDetails {
   private Role role;
 
   @Column(name = "tenant_id", nullable = false)
+  @Pattern(
+      regexp = "^[a-zA-Z0-9_]*$",
+      message = "Tenant ID can only contain letters, numbers, and underscores."
+  )
   private String tenantId;
 
   public User(String email, String password, String username) {

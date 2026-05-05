@@ -40,6 +40,7 @@ public class SchemaMultiTenantConnectionProvider implements MultiTenantConnectio
 
   @Override
   public void releaseConnection(String tenantIdentifier, Connection connection) throws SQLException {
+    connection.setSchema("public");
     connection.close();
   }
 

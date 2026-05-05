@@ -7,6 +7,7 @@ import com.studying.backendservice.dto.AuthResponse;
 import com.studying.backendservice.models.User;
 import com.studying.backendservice.repositories.UserRepository;
 import com.studying.backendservice.services.JwtService;
+import com.studying.backendservice.services.TennantServiceImpl;
 import com.studying.backendservice.utils.Role;
 import java.util.HashMap;
 import java.util.List;
@@ -37,17 +38,20 @@ public class AuthController {
   public SchemaTenantIdentifierResolver schemaTenantIdentifierResolver;
   private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
+  private final TennantServiceImpl tennantService;
+
   @Autowired
   private JdbcTemplate jdbcTemplate;
 
   @Autowired
   public AuthController(
       AuthenticationManager authenticationManager, JwtService jwtService,
-      UserRepository userRepository, SchemaTenantIdentifierResolver schemaTenantIdentifierResolver) {
+      UserRepository userRepository, SchemaTenantIdentifierResolver schemaTenantIdentifierResolver, TennantServiceImpl tennantService) {
     this.authenticationManager = authenticationManager;
     this.jwtService = jwtService;
     this.userRepository = userRepository;
     this.schemaTenantIdentifierResolver = schemaTenantIdentifierResolver;
+    this.tennantService = tennantService;
   }
 
   @PostMapping(value = "/login",
@@ -99,6 +103,7 @@ public class AuthController {
   @PostMapping("/register")
   public ResponseEntity<String> register(@RequestBody AuthRequest request) {
     String tenant = resolveTenantId(request.getUsername());
+    tennantService.createTennant(tenant);
     setTenant(tenant);
     schemaTenantIdentifierResolver.resolveCurrentTenantIdentifier();
 
@@ -110,8 +115,9 @@ public class AuthController {
     newUser.setUsername(request.getUsername());
     newUser.setEmail(request.getUsername());
     newUser.setPassword(passwordEncoder.encode(request.getPassword()));
-    newUser.setRole(Role.ROLE_USER);
+    newUser.setRole(Role.ROLE_ADMIN);
     newUser.setTenantId(tenant);
+    newUser.setEnabled(true);
 
     userRepository.save(newUser);
     return ResponseEntity.ok("User registered successfully");
