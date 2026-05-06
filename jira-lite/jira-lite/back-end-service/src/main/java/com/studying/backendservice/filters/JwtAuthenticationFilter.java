@@ -105,14 +105,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   }
 
   private void setTenant(String tenant) {
-    for(String schema : getAllTenantSchemas()) {
-      if(tenant.equals(schema) && !(tenant.equals("pg_catalog")
+    for (String schema : getAllTenantSchemas()) {
+      if (tenant.equals(schema) && !(tenant.equals("pg_catalog")
           || tenant.equals("information_schema") || tenant.equals("pg_toast"))) {
         TenantContext.setTenantId(tenant);
         return;
-      } else {
-        TenantContext.setTenantId("public");
       }
     }
+    TenantContext.setTenantId("public");
   }
 }

@@ -17,9 +17,15 @@ export class LogoutComponent implements OnInit {
   ngOnInit(): void {
     this.authService.logout().subscribe({
       next: () => {
+        localStorage.removeItem('recentProject');
+        localStorage.removeItem('tenantId');
         this.router.navigate(['/login']);
       },
-      error: () => this.router.navigate(['/login'])
+      error: () => {
+        localStorage.removeItem('recentProject');
+        localStorage.removeItem('tenantId');
+        this.router.navigate(['/login']);
+      }
     });
   }
 
