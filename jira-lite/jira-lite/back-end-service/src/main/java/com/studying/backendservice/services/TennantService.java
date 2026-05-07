@@ -1,9 +1,15 @@
 package com.studying.backendservice.services;
 
+import com.studying.backendservice.dto.TennantDTO;
+import com.studying.backendservice.models.Tennant;
+import java.util.List;
+
 public interface TennantService {
 
-  void createTennant(String name);
-  void deleteTennant(String name);
-  void updateTennant(String oldName, String newName);
+  List<TennantDTO> getAllTennants();
+  TennantDTO getTennantByName(String name);
+  TennantDTO createTennant(String name, int adminId);
+  void deleteTennant(int id);
+  TennantDTO toDto(Tennant tennant);
 
 }

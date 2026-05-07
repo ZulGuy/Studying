@@ -34,10 +34,10 @@ export class AuthService {
     return this.http.post(`${this.api}/logout`, {}, { withCredentials: true });
   }
 
-  register(data: { username: string, email: string, password: string }): Observable<any> {
+  register(data: { email: string, password: string }): Observable<any> {
     return this.http.post(`${this.api}/register`, data, {
       withCredentials: true,
-      responseType: 'text' // <-- це головне
+      responseType: 'text'
     });
   }
 

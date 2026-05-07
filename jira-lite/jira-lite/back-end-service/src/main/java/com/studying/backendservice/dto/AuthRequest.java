@@ -1,17 +1,19 @@
 package com.studying.backendservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.Email;
 import java.io.Serializable;
 
 public class AuthRequest implements Serializable {
 
-  @JsonProperty("username")
-  public String username;
+  @JsonProperty("email")
+  @Email
+  public String email;
   @JsonProperty("password")
   public String password;
 
-  public AuthRequest(String username, String password) {
-    this.username = username;
+  public AuthRequest(String email, String password) {
+    this.email = email;
     this.password = password;
   }
 
@@ -26,11 +28,11 @@ public class AuthRequest implements Serializable {
     this.password = password;
   }
 
-  public String getUsername() {
-    return username;
+  public String getEmail() {
+    return email;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setEmail(String email) {
+    this.email = email;
   }
 }

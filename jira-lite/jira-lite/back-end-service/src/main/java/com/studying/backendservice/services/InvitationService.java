@@ -61,6 +61,11 @@ public class InvitationService {
         .orElseThrow(() -> new IllegalArgumentException("Невалідний токен"));
   }
 
+  public String getTennantByToken(String token) {
+    return tokenRepo.findByToken(token).map(InvitationToken::getTennant)
+        .orElseThrow(() -> new IllegalArgumentException("Невалідний токен"));
+  }
+
   public void markUsed(String token) {
     InvitationToken invitation = tokenRepo.findByToken(token)
         .orElseThrow(() -> new IllegalArgumentException("Невалідний токен"));

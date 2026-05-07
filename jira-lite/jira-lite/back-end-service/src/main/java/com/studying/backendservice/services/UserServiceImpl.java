@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
   private final UserRepository userRepository;
+  private final TennantServiceImpl tennantService;
   private PasswordEncoder passwordEncoder;
   private final PasswordResetTokenRepository tokenRepository;
   private final PasswordEncoder encoder;
@@ -29,12 +30,15 @@ public class UserServiceImpl implements UserService {
 
 
   @Autowired
-  public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, PasswordResetTokenRepository tokenRepository, PasswordEncoder encoder, EmailService emailService) {
+  public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder,
+      PasswordResetTokenRepository tokenRepository, PasswordEncoder encoder,
+      EmailService emailService, TennantServiceImpl tennantService) {
     this.userRepository = userRepository;
     this.passwordEncoder = passwordEncoder;
     this.tokenRepository = tokenRepository;
     this.encoder = encoder;
     this.emailService = emailService;
+    this.tennantService = tennantService;
   }
 
   @Override
@@ -97,6 +101,7 @@ public class UserServiceImpl implements UserService {
     user.setEnabled(true);
     user.setRole(Role.ROLE_USER);
     user.setPassword(passwordEncoder.encode(userDto.getPassword()));
+    user.setTenant(tennantService.getTennantByName(userDto.getTennant()));
     userRepository.save(user);
   }
 
@@ -109,5 +114,12 @@ public class UserServiceImpl implements UserService {
     dto.setActive(user.isEnabled());
     dto.setRole(user.getRole());
     return dto;
+  }
+
+  public UserDTO toggleActive(int id) {
+    User user = userRepository.findById(id).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+    user.setEnabled(!user.isEnabled());
+    userRepository.save(user);
+    return toDto(user);
   }
 }

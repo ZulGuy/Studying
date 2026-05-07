@@ -29,6 +29,10 @@ export class UserService {
     return this.http.put<UserDTO>(`${this.api}/${id}/toggle-active`, {}, { withCredentials: true });
   }
 
+  createUser(user: UserDTO): Observable<UserDTO> {
+    return this.http.post<UserDTO>(this.api, user, { withCredentials: true });
+  }
+
   deleteUser(id: number) {
     return this.http.delete(`${this.api}/${id}`, { withCredentials: true });
   }

@@ -21,6 +21,9 @@ public class InvitationToken {
   private String email;
 
   @Column(nullable = false)
+  private String tennant;
+
+  @Column(nullable = false)
   private LocalDateTime expiresAt;
 
   private boolean used;
@@ -63,6 +66,14 @@ public class InvitationToken {
 
   public void setToken(String token) {
     this.token = token;
+  }
+
+  public String getTennant() {
+    return tennant;
+  }
+
+  public void setTennant(String tennant) {
+    this.tennant = tennant;
   }
 }
 

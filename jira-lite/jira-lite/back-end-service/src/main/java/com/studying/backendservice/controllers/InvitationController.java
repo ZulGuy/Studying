@@ -44,6 +44,8 @@ public class InvitationController {
     }
 
     String email = invitationService.getEmailByToken(token);
+    String tennant = invitationService.getTennantByToken(token);
+    payload.setTennant(tennant);
     payload.setEmail(email);
     userService.register(payload);
     invitationService.markUsed(token);

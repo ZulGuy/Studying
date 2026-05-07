@@ -11,6 +11,8 @@ public class UserDTO {
   private Role role;
   private String password;
 
+  private String tennant;
+
   public UserDTO() {
   }
 
@@ -60,5 +62,13 @@ public class UserDTO {
 
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public String getTennant() {
+    return tennant;
+  }
+
+  public void setTennant(String tennant) {
+    this.tennant = tennant;
   }
 }

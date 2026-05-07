@@ -1,0 +1,54 @@
+package com.studying.backendservice.controllers;
+
+import com.studying.backendservice.dto.TennantDTO;
+import com.studying.backendservice.dto.UserDTO;
+import com.studying.backendservice.models.Tennant;
+import com.studying.backendservice.models.User;
+import com.studying.backendservice.services.TennantService;
+import com.studying.backendservice.services.UserService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/tennants")
+public class TennantController {
+
+  private TennantService tennantService;
+  private UserService userService;
+
+  @Autowired
+  public TennantController(TennantService tennantService, UserService userService) {
+    this.tennantService = tennantService;
+    this.userService = userService;
+  }
+
+  @GetMapping
+  public ResponseEntity<List<Tennant>> getAllTennants() {
+    return new ResponseEntity<>(tennantService.getAllTennants(), HttpStatus.OK);
+  }
+
+  @PostMapping
+  public ResponseEntity<Tennant> createTennant(String name) {
+    return new ResponseEntity<>(tennantService.createTennant(name, userService.getCurrentUser().getId()), HttpStatus.OK);
+  }
+
+  @GetMapping("/{name}")
+  public ResponseEntity<TennantDTO> getTennantByName(@PathVariable String name) {
+    return new ResponseEntity<>(tennantService.getTennantByName(name), HttpStatus.OK);
+  }
+
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> deleteTennant(@PathVariable int id) {
+    tennantService.deleteTennant(id);
+    return new ResponseEntity<>(HttpStatus.OK);
+  }
+
+}

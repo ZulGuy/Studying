@@ -58,26 +58,26 @@ public class AuthController {
       consumes = MediaType.APPLICATION_JSON_VALUE,
       produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
-    String tenant = resolveTenantId(request.getUsername());
+    String tenant = resolveTenantId(request.getEmail());
     setTenant(tenant);
     schemaTenantIdentifierResolver.resolveCurrentTenantIdentifier();
-    System.out.println("request login" + request.username + request.password);
+    System.out.println("request login" + request.email + request.password);
     System.out.println("TenantContext: " + TenantContext.getTenantId());
     Authentication authentication = authenticationManager.authenticate(
-        new UsernamePasswordAuthenticationToken(request.username, request.password)
+        new UsernamePasswordAuthenticationToken(request.email, request.password)
     );
-    System.out.println("request login" + request.username + request.password);
+    System.out.println("request login" + request.email + request.password);
     var user = (User) authentication.getPrincipal();
     Map<String, Object> claims = new HashMap<>();
-    claims.put("tennantId", user.getTenantId());
+    claims.put("tennantId", user.getTenant().getName());
     claims.put("role", user.getAuthorities());
     String token = jwtService.generateToken(claims, user);
     ResponseCookie jwtCookie = ResponseCookie.from("jwt", token)
         .httpOnly(true)
-        .secure(false) // важливо! Працює тільки по HTTPS
+        .secure(false)
         .path("/")
-        .maxAge(24 * 60 * 60) // 1 день
-        .sameSite("Lax") // або "Lax"
+        .maxAge(24 * 60 * 60)
+        .sameSite("Lax")
         .build();
 
     return ResponseEntity.ok()
@@ -102,21 +102,19 @@ public class AuthController {
 
   @PostMapping("/register")
   public ResponseEntity<String> register(@RequestBody AuthRequest request) {
-    String tenant = resolveTenantId(request.getUsername());
-    tennantService.createTennant(tenant);
-    setTenant(tenant);
+    setTenant("public");
     schemaTenantIdentifierResolver.resolveCurrentTenantIdentifier();
 
-    if (userRepository.findByUsername(request.getUsername()).isPresent()) {
+    if (userRepository.findByUsername(request.getEmail()).isPresent()) {
       return ResponseEntity.badRequest().body("Username already exists");
     }
 
     User newUser = new User();
-    newUser.setUsername(request.getUsername());
-    newUser.setEmail(request.getUsername());
+    newUser.setUsername(request.getEmail());
+    newUser.setEmail(request.getEmail());
     newUser.setPassword(passwordEncoder.encode(request.getPassword()));
-    newUser.setRole(Role.ROLE_ADMIN);
-    newUser.setTenantId(tenant);
+    newUser.setRole(Role.ROLE_USER);
+    newUser.setTenant(tennantService.getTennantByName("public"));
     newUser.setEnabled(true);
 
     userRepository.save(newUser);

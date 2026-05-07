@@ -13,7 +13,6 @@ import {CommonModule} from "@angular/common";
 })
 export class RegisterComponent {
   form = {
-    username: '',
     email: '',
     password: ''
   };

@@ -2,6 +2,7 @@ package com.studying.backendservice.models;
 
 
 import com.studying.backendservice.utils.Role;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -9,6 +10,9 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Pattern;
 import java.util.Collection;
@@ -39,12 +43,13 @@ public class User implements UserDetails {
   @Column(name = "role", nullable = false)
   private Role role;
 
-  @Column(name = "tenant_id", nullable = false)
+  @ManyToOne()
+  @JoinColumn(name = "tenant_id", referencedColumnName = "tennants.id", nullable = false)
   @Pattern(
       regexp = "^[a-zA-Z0-9_]*$",
       message = "Tenant ID can only contain letters, numbers, and underscores."
   )
-  private String tenantId;
+  private Tennant tenant;
 
   public User(String email, String password, String username) {
     this.email = email;
@@ -52,11 +57,11 @@ public class User implements UserDetails {
     this.username = username;
   }
 
-  public User(String email, String password, String username, String tenantId, Role role) {
+  public User(String email, String password, String username, Tennant tenant, Role role) {
     this.email = email;
     this.password = password;
     this.username = username;
-    this.tenantId = tenantId;
+    this.tenant = tenant;
     this.role = role;
   }
 
@@ -115,6 +120,14 @@ public class User implements UserDetails {
   @Column(name = "active", nullable = false)
   private boolean active = true;
 
+  public Tennant getTenant() {
+    return tenant;
+  }
+
+  public void setTenant(Tennant tenant) {
+    this.tenant = tenant;
+  }
+
   @Override
   public boolean isEnabled() { return active; }
 
@@ -122,14 +135,6 @@ public class User implements UserDetails {
 
   public void setPassword(String password) {
     this.password = password;
-  }
-
-  public String getTenantId() {
-    return tenantId;
-  }
-
-  public void setTenantId(String tennatId) {
-    this.tenantId = tennatId;
   }
 
   public Role getRole() {

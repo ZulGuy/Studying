@@ -6,13 +6,14 @@ import {AuthService} from "../../services/auth.service";
 import {HttpClient} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {AddUserModalComponent} from "../add-user-modal/add-user-modal.component";
 
 @Component({
   standalone: true,
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, AddUserModalComponent]
 })
 export class UsersComponent implements OnInit {
   users: UserDTO[] = [];
@@ -22,6 +23,7 @@ export class UsersComponent implements OnInit {
   usersPerPage = 10;
   currentPage = 1;
   totalPages = 1;
+  addingUser = false;
 
   constructor(private userService: UserService, private router: Router, private authService: AuthService, private http: HttpClient) {}
 
@@ -77,6 +79,10 @@ export class UsersComponent implements OnInit {
         this.ngOnInit();
       });
     }
+  }
+
+  openAddUserModal() {
+    this.addingUser = true;
   }
 
   resendInvitation(email: string) {

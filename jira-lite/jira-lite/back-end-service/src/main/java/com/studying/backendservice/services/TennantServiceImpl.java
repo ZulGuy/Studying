@@ -1,6 +1,14 @@
 package com.studying.backendservice.services;
 
+import com.studying.backendservice.dto.TennantDTO;
+import com.studying.backendservice.dto.UserDTO;
+import com.studying.backendservice.models.Tennant;
+import com.studying.backendservice.models.User;
+import com.studying.backendservice.repositories.TennantRepository;
+import com.studying.backendservice.repositories.UserRepository;
+import jakarta.persistence.EntityNotFoundException;
 import java.sql.Connection;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -8,15 +16,33 @@ import org.springframework.stereotype.Service;
 @Service
 public class TennantServiceImpl implements TennantService {
 
-  JdbcTemplate jdbcTemplate;
+  private JdbcTemplate jdbcTemplate;
+  private TennantRepository tennantRepository;
+  private UserServiceImpl userService;
+  private UserRepository userRepository;
 
   @Autowired
-  public TennantServiceImpl(JdbcTemplate jdbcTemplate) {
+  public TennantServiceImpl(JdbcTemplate jdbcTemplate, TennantRepository tennantRepository, UserServiceImpl userService, UserRepository userRepository) {
     this.jdbcTemplate = jdbcTemplate;
+    this.tennantRepository = tennantRepository;
+    this.userService = userService;
+    this.userRepository = userRepository;
   }
 
   @Override
-  public void createTennant(String name) {
+  public List<TennantDTO> getAllTennants() {
+    return tennantRepository.findAll().stream()
+        .map(this::toDto)
+        .toList();
+  }
+
+  @Override
+  public TennantDTO getTennantByName(String name) {
+    return toDto(tennantRepository.findByName(name));
+  }
+
+  @Override
+  public TennantDTO createTennant(String name, int adminId) {
     jdbcTemplate.execute(
         "            CREATE SCHEMA IF NOT EXISTS " + name + ";\n"
         + "              CREATE TABLE IF NOT EXISTS " + name + ".users (\n"
@@ -98,15 +124,25 @@ public class TennantServiceImpl implements TennantService {
         + "              CREATE INDEX IF NOT EXISTS idx_tasks_assignee_id_" + name + "       ON " + name + ".tasks(assignee_id);\n"
         + "              CREATE INDEX IF NOT EXISTS idx_invitation_token_email_" + name + "  ON " + name + ".invitation_token(email);\n"
         + "              CREATE INDEX IF NOT EXISTS idx_users_email_" + name + "             ON " + name + ".users(email);");
+    Tennant tennant = new Tennant();
+    tennant.setName(name);
+    User admin = userRepository.findById(adminId).orElseThrow(() -> new EntityNotFoundException("User not found"));
+    tennant.setAdmin(admin);
+    return toDto(tennantRepository.save(tennant));
   }
 
   @Override
-  public void deleteTennant(String name) {
-
+  public void deleteTennant(int id) {
+    tennantRepository.deleteById(id);
   }
 
   @Override
-  public void updateTennant(String oldName, String newName) {
-
+  public TennantDTO toDto(Tennant tennant) {
+    TennantDTO dto = new TennantDTO();
+    dto.setId(tennant.getId());
+    dto.setName(tennant.getName());
+    dto.setAdmin(tennant.getAdmin().getUsername());
+    dto.setStatus(tennant.isEnabled());
+    return dto;
   }
 }

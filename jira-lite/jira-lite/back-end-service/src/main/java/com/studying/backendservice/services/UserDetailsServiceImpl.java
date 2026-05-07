@@ -1,6 +1,9 @@
 package com.studying.backendservice.services;
 
+import com.studying.backendservice.models.User;
 import com.studying.backendservice.repositories.UserRepository;
+import jakarta.transaction.Transactional;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,8 +21,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   }
 
   @Override
+  @Transactional
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    return userRepository.findByUsername(username)
+    User user = userRepository.findByUsername(username)
         .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+    Hibernate.initialize(user.getTenant());
+    Hibernate.initialize(user.getAuthorities());
+    return user;
   }
 }

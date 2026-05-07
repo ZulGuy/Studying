@@ -2,7 +2,6 @@ package com.studying.backendservice.services;
 
 import com.studying.backendservice.dto.UserDTO;
 import com.studying.backendservice.models.User;
-import jakarta.transaction.Transactional;
 import java.util.List;
 
 public interface UserService {
@@ -16,5 +15,7 @@ public interface UserService {
   UserDTO toDto(User user);
   UserDTO getCurrentUser();
   void register(UserDTO userDto);
+
+  UserDTO toggleActive(int id);
 
 }
